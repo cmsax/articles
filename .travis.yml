@@ -16,7 +16,7 @@ deploy:
     provider: pages
     skip_cleanup: true
     github_token: $github_token
-    local_dri: temp/pages/public
+    local_dir: temp/pages/public
     on:
         branch: master
 
