@@ -8,13 +8,10 @@ cache:
 
 script:
     - npm i -g hexo
-    - hexo init --help
-    - hexo --help
     - hexo init pages && cd pages
     - npm install
     - cp -r ../articles/* ./source/_posts
     - hexo generate
-    - ls -al
 
 deploy:
     provider: pages
