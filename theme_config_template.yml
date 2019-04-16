@@ -1,5 +1,8 @@
 projects_url: https://github.com/cmsax
 
+gravatar:
+    email: cmsax@live.com
+
 nav:
     Home: /
     Projects: https://github.com/cmsax
