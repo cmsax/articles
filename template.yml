@@ -3,7 +3,7 @@ author: Mingshi
 language: zh
 
 url: https://blog.unoiou.com
-root: articles/
+root: /
 permalink: :year/:month/:day/:title/
 
 SEOTitle: "Refined articles of daily research - Mingshi's blog" 
