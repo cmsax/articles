@@ -2,8 +2,8 @@ title: Articles of daily research
 author: Mingshi
 language: zh
 
-url: https://blog.unoiou.com/articles/
-root: /
+url: https://blog.unoiou.com/articles
+root: /articles/
 permalink: :year/:month/:day/:title/
 
 SEOTitle: "Refined articles of daily research - Mingshi's blog" 
