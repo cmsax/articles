@@ -1,5 +1,5 @@
-export theme_repo="https://github.com/pinggod/hexo-theme-apollo.git"
-export theme_name="apollo"
+export theme_repo="https://github.com/sergodeeva/cactus-white.git"
+export theme_name="cactus-white"
 
 (envsubst < template.yml) >> _config.yml
 

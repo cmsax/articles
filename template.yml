@@ -23,8 +23,8 @@ category_dir: categories
 theme: ${theme_name}
 
 search:
-      path: search.json
-      field: post
+    path: search.json
+    field: post
 
 weibo_username: cmsax
 github_username: cmsax
@@ -35,7 +35,12 @@ per_page: 5
 pagination_dir: page
 default_category: uncategorized
 
-#
+nav:
+    Home: /
+    Writing: /posts/
+    Projects: https://github.com/cmsax
+
+
 #comment:
 #    type: gitment
 #    id: ${gitment_id}
