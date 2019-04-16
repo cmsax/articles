@@ -1,3 +1,6 @@
+export theme_repo="https://github.com/pinggod/hexo-theme-apollo.git"
+export theme_name="apollo"
+
 (envsubst < template.yml) >> _config.yml
 
 cat _config.yml
