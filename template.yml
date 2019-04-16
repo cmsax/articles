@@ -29,13 +29,13 @@ search:
 weibo_username: cmsax
 github_username: cmsax
 
-
-comment:
-    type: gitment
-    id: ${gitment_id}
-    secret: ${gitment_secret}
-    owner: cmsax
-    repo: cmsax/articles
-
+#
+#comment:
+#    type: gitment
+#    id: ${gitment_id}
+#    secret: ${gitment_secret}
+#    owner: cmsax
+#    repo: cmsax/articles
+#
 
 
