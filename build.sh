@@ -10,6 +10,7 @@ git clone $theme_repo themes/$theme_name
 
 ls ./themes
 
+rm ./source/_posts/*
 cp -r ../articles/* ./source/_posts
 cp -f ../_config.yml ./_config.yml
 
