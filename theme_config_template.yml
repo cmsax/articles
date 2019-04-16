@@ -59,3 +59,9 @@ open_graph:
     twitter_id:
     google_plus:
 
+google_analytics:
+    enabled: false
+
+baidu_analytics:
+    enabled: false
+
