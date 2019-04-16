@@ -1,7 +1,8 @@
 export theme_repo="https://github.com/sergodeeva/cactus-white.git"
 export theme_name="cactus-white"
 
-(envsubst < template.yml) >> _config.yml
+(envsubst < config_template.yml) >> _config.yml
+(envsubst < theme_config_template.yml) >> _theme_config.yml
 
 cat _config.yml
 
@@ -16,6 +17,7 @@ ls ./themes
 rm ./source/_posts/*
 cp -r ../articles/* ./source/_posts
 cp -f ../_config.yml ./_config.yml
+cp -f ../_theme_config.yml ./themes/$theme_name/_config.yml
 
 cat ./_config.yml
 
