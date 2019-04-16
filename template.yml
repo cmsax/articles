@@ -6,7 +6,7 @@ url: https://blog.unoiou.com/
 root: articles/
 permalink: :year/:month/:day/:title/
 
-SEOTitle: 
+SEOTitle: "" 
 email: cmsax@live.com
 description: ""
 keyword: ""
