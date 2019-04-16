@@ -1,6 +1,6 @@
 title: Articles of daily research
 author: Mingshi
-language: zh-CN
+language: en
 
 url: https://blog.unoiou.com/articles
 root: /articles/
@@ -28,9 +28,6 @@ search:
 weibo_username: cmsax
 github_username: cmsax
 
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
 per_page: 5
 pagination_dir: page
-default_category: uncategorized
 
