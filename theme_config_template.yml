@@ -1,0 +1,27 @@
+nav:
+    Home: /
+    Projects: http://github.com/cmsax
+
+customize:
+    avatar: ${avatar_img}
+    logo:
+        ebabled: false
+    favicon:
+        desktop:
+            url: /images/favicon.ico
+            gravatar: false
+        android:
+            url: /images/favicon.ico
+            gravatar: false
+        apple:
+            url: /images/favicon.ico
+            gravatar: false
+    show_all_posts: false
+    post_count: 5
+    highlight: pojoaque
+
+rss: false
+
+
+
+
