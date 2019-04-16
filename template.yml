@@ -3,13 +3,13 @@ author: Mingshi
 language: zh
 
 url: https://blog.unoiou.com/articles/
-root: /
+root: articles/
 permalink: :year/:month/:day/:title/
 
-SEOTitle: "" 
+SEOTitle: "Refined articles of daily research - Mingshi's blog" 
 email: cmsax@live.com
-description: ""
-keyword: ""
+description: "Articles about coding, quantitative transaction, natuaral language processing and daily records."
+keyword: "Mingshi, cmsax, nlp, quant, blog"
 
 sidebar-img: ${sidebar_img_url}
 
