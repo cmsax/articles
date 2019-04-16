@@ -11,7 +11,7 @@ git clone $theme_repo themes/$theme_name
 ls ./themes
 
 cp -r ../articles/* ./source/_posts
-cp -f ../../.config.yml ./_config.yml
+cp -f ../_config.yml ./_config.yml
 
 cat ./_config.yml
 
