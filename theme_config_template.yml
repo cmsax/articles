@@ -1,6 +1,8 @@
+projects_url: https://github.com/cmsax
+
 nav:
     Home: /
-    Projects: http://github.com/cmsax
+    Projects: https://github.com/cmsax
     #Search: /search/
 
 how_all_posts: false
@@ -18,4 +20,34 @@ disqus:
 social_links:
     github: https://github.com/cmsax
     weibo: https://weibo.com/cmsax
+
+post:
+    show_updated: false
+
+archive:
+    sort_updated: false
+
+tags_overview: false
+
+posts_overview:
+    show_all_posts: false
+    post_count: 5
+    sort_updated: false
+
+logo:
+    enabled: false
+
+favicon:
+    desktop:
+        url: /images/favicon.ico
+        gravatar: false
+    android:
+        url: /images/favicon.ico
+        gravatar: false
+    apple:
+        url: /images/favicon.ico
+        gravatar: false
+
+page_width: 48
+
 

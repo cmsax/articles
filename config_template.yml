@@ -34,8 +34,3 @@ per_page: 5
 pagination_dir: page
 default_category: uncategorized
 
-nav:
-    Home: /
-    Writing: /posts/
-    Projects: https://github.com/cmsax
-
