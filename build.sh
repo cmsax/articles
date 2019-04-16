@@ -1,5 +1,5 @@
-export theme_repo="https://github.com/sergodeeva/cactus-white.git"
-export theme_name="cactus-white"
+export theme_repo="https://github.com/probberechts/hexo-theme-cactus.git"
+export theme_name="cactus"
 
 (envsubst < config_template.yml) >> _config.yml
 (envsubst < theme_config_template.yml) >> _theme_config.yml
@@ -18,6 +18,8 @@ rm ./source/_posts/*
 cp -r ../articles/* ./source/_posts
 cp -f ../_config.yml ./_config.yml
 cp -f ../_theme_config.yml ./themes/$theme_name/_config.yml
+
+# hexo new page search
 
 echo _config.yml
 cat ./_config.yml
