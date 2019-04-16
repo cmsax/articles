@@ -1,0 +1,41 @@
+title: Articles of daily research
+author: Mingshi
+language: zh
+
+url: https://blog.unoiou.com/
+root: articles/
+permalink: :year/:month/:day/:title/
+
+SEOTitle: 
+email: cmsax@live.com
+description: ""
+keyword: ""
+
+sidebar-img: ${sidebar_img_url}
+
+# Dir
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archive
+category_dir: categories
+
+theme: ${theme_name}
+
+search:
+      path: search.json
+      field: post
+
+weibo_username: cmsax
+github_username: cmsax
+
+
+comment:
+    type: gitment
+    id: ${gitment_id}
+    secret: ${gitment_secret}
+    owner: cmsax
+    repo: cmsax/articles
+
+
+

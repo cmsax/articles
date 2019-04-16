@@ -7,7 +7,8 @@ cache:
         - node_modules
 
 script:
-    - npm i -g hexo
+    - (echo $gitment_id)
+    - npm i -g hexo hexo-generator-search
     - hexo init pages && cd pages
     - npm install
     - cp -r ../articles/* ./source/_posts
