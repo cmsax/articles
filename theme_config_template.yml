@@ -1,11 +1,11 @@
-projects_url: https://github.com/cmsax
+projects_url: ${github_url}
 
 gravatar:
-    email: cmsax@live.com
+    email: ${hexo_email}
 
 nav:
     Home: /
-    Projects: https://github.com/cmsax
+    Projects: ${github_url}
     #Search: /search/
 
 how_all_posts: false
@@ -21,8 +21,8 @@ disqus:
     enabled: false
 
 social_links:
-    github: https://github.com/cmsax
-    weibo: https://weibo.com/cmsax
+    github: ${github_url}
+    weibo: ${weibo}
 
 post:
     show_updated: false
