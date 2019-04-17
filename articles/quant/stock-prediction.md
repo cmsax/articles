@@ -1,28 +1,13 @@
 ---
-title: 一个简单的股票预测模型
-date: 2019-04-15  
+title: A simple Hello-World markdown file ;)
+date: 2019-04-15
 ---
 
-# 测试这个内容
+# Welcome to `Articles`!
 
-## test
+You may need to read markdown [documents](https://guides.github.com/features/mastering-markdown/),
+and Hexo [document](https://hexo.io/docs) first, it's simple to use.
 
-这个地方还是这样，的数据库
+The table above is called `frontmatter`[intro](https://hexo.io/docs/front-matter.html) and it 
+defines the markdown file's meta data for Hexo or other static sites generator to read.
 
-* test
-* test
-* test
-* test
-* teset
-    * test
-    * test
-        * test
-* test
-
-## test2
-
-[Example](https://bog.unoiou.com/task-assistant)
-
-### 测试这个内容
-
-## test3
