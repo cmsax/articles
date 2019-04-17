@@ -16,7 +16,7 @@ Pull requests are welcomed!
 
 `Articles` now supports only 
 `travis-ci`, you can help enhance its compatibility, reliability
-and flexibility and reduce its complexity.
+and flexibility and reduce its complexity to make it support more CI-CD platform.
 
 ### Contribute Articles
 
