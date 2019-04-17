@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.com/cmsax/articles.svg?branch=master)](https://travis-ci.com/cmsax/articles)
 
-Automatically build your articles on the cloud with continuous integration and continuous deployment.
-You just concentrate on writing.
+Automatically build your articles on the cloud with continuous deployment.
+You just concentrate on writing and never install `npm` or `hexo` on your machine.
 
 `Articles` is enpowered by Hexo, GitHub pages and currently Travis-CI. You write the articles locally,
 and we build & publish your articles according your config.
