@@ -9,13 +9,12 @@ export hexo_description="Daily research notes about nlp, quant and engineering."
 # Url
 export hexo_url="https://blog.unoiou.com/articles"
 export hexo_root="/articles/"
-export hexo_permalink=""
+export hexo_permalink=":year/:month/:day/:title/"
 export hexo_seo_title="Daily research notes about nlp, quant and engineering."
 # Social links
 export weibo="https://weibo.com/cmsax"
 export hexo_email="cmsax@live.com"
 export github_url="https://github.com/cmsax"
-
 
 (envsubst < config_template.yml) >> _config.yml
 (envsubst < theme_config_template.yml) >> _theme_config.yml
