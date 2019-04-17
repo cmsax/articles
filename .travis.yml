@@ -19,5 +19,5 @@ deploy:
     github_token: $github_token
     local_dir: pages/public
     on:
-        branch: master
+        branch: articles
 
