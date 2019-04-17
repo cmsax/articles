@@ -1,15 +1,14 @@
-title: Articles of daily research
-author: Mingshi
-language: en
+title: ${hexo_title} 
+author: ${hexo_author}
+language: ${hexo_lang}
 
-url: https://blog.unoiou.com/articles
-root: /articles/
-permalink: :year/:month/:day/:title/
+url: ${hexo_url}
+root: ${hexo_root}
+permalink: ${hexo_permalink}
 
-SEOTitle: "Refined articles of daily research - Mingshi's blog" 
-email: cmsax@live.com
-description: "Articles about coding, quantitative transaction, natuaral language processing and daily records."
-keyword: "Mingshi, cmsax, nlp, quant, blog"
+SEOTitle: ${hexo_seo_title}
+email: ${hexo_email}
+description: ${hexo_description}
 
 sidebar-img: ${sidebar_img_url}
 
@@ -25,8 +24,8 @@ search:
     path: search.json
     field: post
 
-weibo_username: cmsax
-github_username: cmsax
+weibo_username: ${hexo_author}
+github_username: ${hexo_author}
 
 per_page: 5
 pagination_dir: page
