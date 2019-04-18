@@ -8,17 +8,19 @@ You just focus on writing, no deed to install `npm` or `Hexo` on your machine an
 `Articles` is enpowered by `Hexo`, `GitHub pages` and currently `Travis-CI`. You write the articles locally,
 and we build & publish your articles according your config.
 
+Besides, we should upload, share and manage our original markdowns but not the `site` with CSS/Javascript. 
+
 ## Contribution
 
 Pull requests are welcomed!
 
-### Contribute Codes
+### Codes
 
 `Articles` now supports only 
 `travis-ci`, you can help enhance its compatibility, reliability
 and flexibility and reduce its complexity to make it support more CI-CD platform.
 
-### Contribute Articles
+### Articles
 
 Contribute your excellent articles on `articles` branch.
 
@@ -30,7 +32,7 @@ Visit: [blog](https://blog.unoiou.com/articles)
 
 ### GitHub
 
-- Fork this repository.
+- Just fork this repository.
 
 ### Travis-CI
 
