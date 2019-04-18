@@ -2,8 +2,8 @@
 export theme_repo="https://github.com/probberechts/hexo-theme-cactus.git"
 export theme_name="cactus"
 # Meta
-epxort hexo_title="Articles"
-epxport hexo_author="cmsax"
+export hexo_title="Articles"
+export hexo_author="cmsax"
 export hexo_lang="en"
 export hexo_description="Daily research notes about nlp, quant and engineering."
 # Url
