@@ -10,7 +10,7 @@ and we build & publish your articles according your config.
 
 ## Contribution
 
-Pull requests are welcomed!
+Pull requests are welcome!
 
 ### Contribute Codes
 
