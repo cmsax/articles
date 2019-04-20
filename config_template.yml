@@ -30,3 +30,14 @@ github_username: ${hexo_author}
 per_page: 5
 pagination_dir: page
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 5
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+

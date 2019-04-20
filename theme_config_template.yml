@@ -6,11 +6,11 @@ gravatar:
 nav:
     Home: /
     Projects: ${github_url}
-    #Search: /search/
+    Search: /search/
 
 highlight: pojoaque
 
-rss: false
+rss: 
 
 color_scheme: white
 

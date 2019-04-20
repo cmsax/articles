@@ -21,7 +21,7 @@ export github_url="https://github.com/cmsax"
 
 cat _config.yml
 
-npm i -g hexo hexo-generator-search
+npm i -g hexo hexo-generator-search hexo-generator-feed
 hexo init pages && cd pages
 npm install
 
@@ -34,7 +34,7 @@ cp -r ../articles/* ./source/_posts
 cp -f ../_config.yml ./_config.yml
 cp -f ../_theme_config.yml ./themes/$theme_name/_config.yml
 
-# hexo new page search
+hexo new page search && echo -e 'title: Search\ntype:search\n---' > source/search/index.md
 
 echo _config.yml
 cat ./_config.yml
