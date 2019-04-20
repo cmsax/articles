@@ -37,7 +37,10 @@ cp -r ../articles/* ./source/_posts
 cp -f ../_config.yml ./_config.yml
 cp -f ../_theme_config.yml ./themes/$theme_name/_config.yml
 
-hexo new page search && echo '---\ntitle: Search\ntype:search\n---\n' > $searchPage && cat $searchPage
+# Search page
+hexo new page search && echo '---\ntitle: Search\ntype: search\n---\n' > $searchPage && cat $searchPage
+# Categories automation
+# hexo new page categories
 
 echo _config.yml
 cat ./_config.yml
