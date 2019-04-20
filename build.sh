@@ -1,3 +1,4 @@
+#!bin/sh
 # Theme
 export theme_repo="https://github.com/probberechts/hexo-theme-cactus.git"
 export theme_name="cactus"
@@ -24,9 +25,10 @@ searchPage='./source/search/index.md'
 
 cat _config.yml
 
-npm i -g hexo hexo-generator-search hexo-generator-feed
+npm i -g hexo
 hexo init pages && cd pages
 npm install
+npm i hexo-generator-search hexo-generator-feed --save
 
 git clone $theme_repo themes/$theme_name
 
