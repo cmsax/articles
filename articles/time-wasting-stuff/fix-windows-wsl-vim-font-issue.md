@@ -19,3 +19,7 @@ Fourtunately, I found a solution by editing `Registry` on Windows 10.
 
 It's fucking working now. Fuck! I do not judge Windows 10, but I've wasted a lot of time solving these sort of egg-painful things!
 
+## Once for All Solution
+
+Command line on Windows is incurable, anything has done is just a waste of time. The best solution is just use [Cmder](https://cmder.net/) instead.
+
