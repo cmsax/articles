@@ -16,6 +16,9 @@ export weibo="https://weibo.com/cmsax"
 export hexo_email="cmsax@live.com"
 export github_url="https://github.com/cmsax"
 
+# Constants
+searchPage='./source/search/index.md'
+
 (envsubst < config_template.yml) >> _config.yml
 (envsubst < theme_config_template.yml) >> _theme_config.yml
 
@@ -34,7 +37,7 @@ cp -r ../articles/* ./source/_posts
 cp -f ../_config.yml ./_config.yml
 cp -f ../_theme_config.yml ./themes/$theme_name/_config.yml
 
-hexo new page search && echo -e 'title: Search\ntype:search\n---' > source/search/index.md
+hexo new page search && echo -e '---\ntitle: Search\ntype:search\n---\n' > $searchPage && cat $searchPage
 
 echo _config.yml
 cat ./_config.yml
