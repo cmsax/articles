@@ -8,9 +8,6 @@ nav:
     Projects: ${github_url}
     #Search: /search/
 
-how_all_posts: false
-post_count: 5
-
 highlight: pojoaque
 
 rss: false
@@ -33,9 +30,7 @@ archive:
 tags_overview: false
 
 posts_overview:
-    show_all_posts: false
-    post_count: 5
-    sort_updated: false
+    show_all_posts: true
 
 logo:
     enabled: false
