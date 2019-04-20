@@ -23,3 +23,15 @@ It's fucking working now. Fuck! I do not judge Windows 10, but I've wasted a lot
 
 Command line on Windows is incurable, anything has done is just a waste of time. The best solution is just use [Cmder](https://cmder.net/) instead.
 
+Besides, I suggest you to use `zsh` instead of `Powershit`(`Powershell`) or `cnm`(`cmd`).
+
+After installed `zsh`, `oh-my-zsh` on your `WSL`, append following scripts to your `~/.bashrc` file.
+
+```bash
+bash -c zsh
+```
+
+And set `{WSL::bash}` as the default shell of `cmder`.
+
+Now enjoy your new fantastic terminal. :)
+
