@@ -51,6 +51,8 @@ is also supported, but it's not free).
 - Install Netlify to your repository.
 - Set `hexo_url` and `hexo_root` variables in your Netlify envrionment.
 - Select `articles` as deploy-branch.
+- Set build scripts to `sh ./build.sh`
+- Set publish directory to `./pages/public`
 
 ## Config
 
