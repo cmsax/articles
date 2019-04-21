@@ -28,7 +28,7 @@ cat _config.yml
 npm i -g hexo
 hexo init pages && cd pages
 npm install
-npm i hexo-generator-search hexo-generator-feed --save
+npm i hexo-generator-search hexo-generator-feed hexo-generator-sitemap --save
 
 git clone $theme_repo themes/$theme_name
 

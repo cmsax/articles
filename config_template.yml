@@ -41,3 +41,6 @@ feed:
   order_by: -date
   icon: icon.png
 
+sitemap:
+    path: sitemap.xml
+
