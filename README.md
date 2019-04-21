@@ -35,7 +35,9 @@ Visit: [blog](https://blog.unoiou.com/articles)
 
 - Just fork this repository.
 
-### Travis-CI
+### CI Enviornment
+
+#### Travis-CI
 
 - Sign up a Travis-CI account on [travis-ci.org](https://travis-ci.org)
 (It's free for open-source projects. [travis-ci.com](https://travis-ci.com)
@@ -43,6 +45,12 @@ is also supported, but it's not free).
 
 - Install travis-ci on the repository you just forked according to travis-ci's
 [document](https://docs.travis-ci.com/) or tutorial.
+
+#### Netlify
+
+- Install Netlify to your repository.
+- Set `hexo_url` and `hexo_root` variables in your Netlify envrionment.
+- Select `articles` as deploy-branch.
 
 ## Config
 
