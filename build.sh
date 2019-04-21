@@ -26,6 +26,7 @@ searchPage='./source/search/index.md'
 cat _config.yml
 
 npm i -g hexo
+rm -rf pages
 hexo init pages && cd pages
 npm install
 npm i hexo-generator-search hexo-generator-feed hexo-generator-sitemap --save
