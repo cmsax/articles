@@ -56,7 +56,8 @@ open_graph:
     google_plus:
 
 google_analytics:
-    enabled: false
+    enabled: true
+    id: 'UA-138733674-1'
 
 baidu_analytics:
     enabled: false
