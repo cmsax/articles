@@ -19,7 +19,6 @@ export github_url="https://github.com/cmsax"
 
 # Constants
 searchPage='./source/search/index.md'
-archivesPage='./source/archives/index.md'
 
 (envsubst < config_template.yml) >> _config.yml
 (envsubst < theme_config_template.yml) >> _theme_config.yml
@@ -42,8 +41,6 @@ cp -f ../_theme_config.yml ./themes/$theme_name/_config.yml
 
 # Search page
 hexo new page search && echo '---\ntitle: Search\ntype: search\n---\n' > $searchPage && cat $searchPage
-# Archives page
-hexo new page archives && echo '---\ntitle: Archives\ntype: archives\n---\n' > $archivesPage && cat $archivesPage
 # Categories automation
 # hexo new page categories
 
