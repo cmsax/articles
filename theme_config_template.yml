@@ -6,7 +6,8 @@ gravatar:
 nav:
     Home: /
     Projects: ${github_url}
-    Search: /search/
+    #Search: /search/
+    Archives: /archives/
 
 highlight: pojoaque
 
