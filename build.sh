@@ -7,8 +7,9 @@ export hexo_author="cmsax"
 export hexo_lang="en"
 export hexo_description="Daily research notes about nlp, quant and engineering."
 # Url
-export hexo_url="https://blog.unoiou.com/articles"
-export hexo_root="/articles/"
+# Set hexo_url and hexo_root variables in your CI environment or just export them here.
+#export hexo_url="https://blog.unoiou.com/articles"
+#export hexo_root="/articles/"
 export hexo_permalink=":year/:month/:day/:title/"
 export hexo_seo_title="Daily research notes about nlp, quant and engineering."
 # Social links
