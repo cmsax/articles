@@ -16,7 +16,8 @@ rss:
 color_scheme: white
 
 disqus:
-    enabled: false
+    enabled: true
+    shortname: cmsaxblog
 
 social_links:
     github: ${github_url}
