@@ -1,6 +1,7 @@
 # Articles
 
 [![Build Status](https://travis-ci.com/cmsax/articles.svg?branch=master)](https://travis-ci.com/cmsax/articles)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/de290507-cee3-40eb-aace-8cb7952d5d7e/deploy-status)](https://app.netlify.com/sites/gracious-lamarr-991d53/deploys)
 
 Automatically build your articles on the cloud with continuous deployment.
 You just focus on writing, no deed to install `npm` or `Hexo` on your machine anymore.
