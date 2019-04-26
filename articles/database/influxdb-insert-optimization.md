@@ -1,5 +1,6 @@
 ---
 title: Optimize InfluxDB Data Insertion
+author: Mingshi
 date: 2019-04-18
 ---
 

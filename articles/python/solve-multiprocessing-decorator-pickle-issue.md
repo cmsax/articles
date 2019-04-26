@@ -1,5 +1,6 @@
 ---
 title: Solve Pickle Issue When Using Function with Decorator in Multiprocessing
+author: Mingshi
 date: 2019-04-26
 ---
 

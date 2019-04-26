@@ -1,5 +1,6 @@
 ---
 title: Our Solution to Electron Continuous Integration
+author: Mingshi
 date: 2018-07-06
 ---
 

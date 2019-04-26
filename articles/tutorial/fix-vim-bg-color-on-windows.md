@@ -1,5 +1,6 @@
 ---
 title: Fix Vim Red Background Color Issue on Windows WSL.
+author: Mingshi
 date: 2019-04-18
 ---
 

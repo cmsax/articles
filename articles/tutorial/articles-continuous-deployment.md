@@ -1,5 +1,6 @@
 ---
 title: Automatically Deploy Your Documents by Continuous Delivery
+author: Mingshi
 date: 2019-04-17
 ---
 
