@@ -1,6 +1,7 @@
 #!bin/sh
 # Theme
-export theme_repo="https://github.com/probberechts/hexo-theme-cactus.git"
+#export theme_repo="https://github.com/probberechts/hexo-theme-cactus.git"
+export theme_repo="https://github.com/cmsax/hexo-theme-cactus.git"
 export theme_name="cactus"
 # Meta
 export hexo_title="Articles"
