@@ -48,7 +48,7 @@ favicon:
         url: /images/favicon.ico
         gravatar: false
 
-page_width: 48
+page_width: 65
 
 open_graph:
     fb_app_id:
