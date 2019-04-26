@@ -20,7 +20,7 @@ The install process is smooth, just type a line of command and click `Enter`, yo
 
 1. Right click the Windows icon on bottom-left of your screen, and click `Powershell (as Admin)` option like below:
 
-![t1](http://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t1.png)
+![t1](https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t1.png)
 
 2. When the User-Account-Control windows displays, click `Yes`.
 
