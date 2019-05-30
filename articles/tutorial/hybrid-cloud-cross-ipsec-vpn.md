@@ -3,6 +3,7 @@ title: Hybrid Cloud Across IPsec VPN Tunnel
 author: Mingshi
 date: 2019-05-30
 ---
+
 ## Tutorial
 
 - Install IPsec VPN on public cloud machine.
@@ -24,3 +25,7 @@ server {
         }
 }
 ```
+
+## Tips
+
+- Ubuntu saves your life not centOS.
