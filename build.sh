@@ -6,7 +6,7 @@ export theme_name="cactus"
 export hexo_title="Articles"
 export hexo_author="cmsax"
 export hexo_lang="en"
-export hexo_description="Daily research notes about nlp, quant and engineering."
+export hexo_description="Monthly research notes about nlp, quant and engineering."
 # Url
 #export hexo_url="https://blog.unoiou.com/articles"
 #export hexo_root="/articles/"
