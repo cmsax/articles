@@ -20,7 +20,7 @@ According to [InfluxDB's official docker image](https://hub.docker.com/_/influxd
 
 I add a service to a job, following `.gitlab-ci.yml` describes it:
 
-```yaml
+```yml
 # Execute via shell
 services:
   - name: influxdb:latest
@@ -38,4 +38,12 @@ The `mysql` image bind port `3306` by default, yet `influxdb` has not. Besides, 
 
 To debug, we can run our job on local gitlab-runner, and add `tail -F /dev/null` line before the part where our script fails, this will hault the job for 30 minutes. While it hangs, we can attach to the container wit `docker exec -it container-name /bin/sh` to see what happens. But I'd not try this.
 
-[WIP]
+Finally, I found that the executor was randomly `Docker executor` and `Kubernetes executor`. The address is different in different executor.
+In `Docker executor`, its own dns service will resolve the service name to a typical ip address. However in `K8S executor` you must link to the service via exact ip address, such as `localhost` or `127.0.0.1`.
+
+Then I just add a tag to the job, it works. GitLab CI will automatically publish the `EXPOSEd` port in the image's `Dockerfile`.
+
+```yml
+tags:
+  - kubernetes
+```
