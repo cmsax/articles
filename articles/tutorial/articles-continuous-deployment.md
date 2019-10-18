@@ -15,4 +15,3 @@ You just concentrate on writing and never install `npm` or `Hexo` on your machin
 `Articles` is enpowered by Hexo, `GitHub pages` and currently `Travis-CI`. You write the articles locally, and we build & publish your articles according your config.
 
 You can find more information [here](https://github.com/cmsax/articles)
-

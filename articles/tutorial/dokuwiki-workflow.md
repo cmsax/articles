@@ -4,6 +4,8 @@ author: Mingshi
 date: 2019-10-18
 ---
 
+## Motivation
+
 [DokuWiki](https://www.dokuwiki.org/dokuwiki) is a powerful self-host wiki system. Content in a DokuWiki site is all
 static s.t. we can easily backup or restore our documents.
 
@@ -14,6 +16,10 @@ can't remember which files are not on the cloud.
 So I need an automation tool to help me simplify jobs above.
 
 Git is perfect for this situation, it's distributed and easy to control version of files. So I created a DokuWiki workflow based on Git.
+
+## Structure
+
+![Structure](https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191018191649.png)
 
 ## Setup a DokuWiki Site
 
@@ -33,7 +39,3 @@ The DokuWiki site needs to keep pace with local repository, so add another regul
 
 Notice that files in DokuWiki directory is owned by `daemon` by default, after `sudo git pull` the files are owned by `root`,
 s.t. DokuWiki itself cannot modify them, in other words, you cannot edit the pages on DokuWiki webpage, which is just what we want it to be in order to prevent version conflict.
-
-## Structure
-
-![Structure](https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20191018191649.png)

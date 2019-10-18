@@ -22,11 +22,11 @@ The install process is smooth, just type a line of command and click `Enter`, yo
 
 ![t1](https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t1.png)
 
-2. When the User-Account-Control windows displays, click `Yes`.
+1. When the User-Account-Control windows displays, click `Yes`.
 
 ![t2](https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t2.png)
 
-3. Paste the scripts below to the window:
+1. Paste the scripts below to the window:
 
 ```Powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -34,15 +34,15 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 ![t3](https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t3.png)
 
-4. Type `Enter`, when it finished, the window should be like below:
+1. Type `Enter`, when it finished, the window should be like below:
 
 ![t4](https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t4.png)
 
-5. Check the installation. Type `choco` or `choco -?`, if you get result like below, it means the installation is OK.
+1. Check the installation. Type `choco` or `choco -?`, if you get result like below, it means the installation is OK.
 
 ![t5](https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t5.png)
 
-6. Reboot your computer to activate some functionality of `Chocolatey`.
+1. Reboot your computer to activate some functionality of `Chocolatey`.
 
 Done!
 
@@ -77,4 +77,3 @@ Now you get the available packages and installation command.
 ![t7](https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t7.png)
 
 Copy the installation command and paste it to PowerShell window. Click `Enter` to run it.
-

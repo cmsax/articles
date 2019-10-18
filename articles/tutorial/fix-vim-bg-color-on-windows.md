@@ -17,4 +17,3 @@ Export a variable called `TERM` can fix this issue permanently.
 ```bash
 export TERM=xterm+256colors
 ```
-
