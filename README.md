@@ -14,7 +14,7 @@ Pull requests are welcomed!
 
 ### Contribute Codes
 
-`Articles` now supports only 
+`Articles` now supports only
 `travis-ci`, you can help enhance its compatibility, reliability
 and flexibility and reduce its complexity.
 
@@ -24,7 +24,7 @@ Contribute your excellent articles on `articles` branch.
 
 ## Site
 
-Visit: [blog](https://blog.unoiou.com/articles)
+Visit: [blog](https://www.unoiou.com/articles)
 
 ## Setup
 
@@ -35,11 +35,11 @@ Visit: [blog](https://blog.unoiou.com/articles)
 ### Travis-CI
 
 - Sign up a Travis-CI account on [travis-ci.org](https://travis-ci.org)
-(It's free for open-source projects. [travis-ci.com](https://travis-ci.com)
-is also supported, but it's not free).
+  (It's free for open-source projects. [travis-ci.com](https://travis-ci.com)
+  is also supported, but it's not free).
 
 - Install travis-ci on the repository you just forked according to travis-ci's
-[document](https://docs.travis-ci.com/) or tutorial.
+  [document](https://docs.travis-ci.com/) or tutorial.
 
 ## Config
 
@@ -63,4 +63,3 @@ build your sites on the go.
 
 `sh ./publish.sh` is recommended to use when you really don't have
 any commit message to write. ;)
-
