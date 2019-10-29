@@ -37,7 +37,7 @@ Notice that files in DokuWiki directory is owned by `daemon` by default, after `
 
 ### Suggested Tool Chain
 
-DokuWiki uses `.txt` files as pages, in order to treat them as markdown files, you need to put a `workplace` setting file for vscode. The file content maybe following:
+DokuWiki uses `.txt` files as pages, in order to treat them as markdown files, you need to put a `workplace` setting file `.vscode/settings.json` for vscode. The file content maybe following:
 
 ```json
 {
