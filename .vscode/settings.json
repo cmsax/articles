@@ -4,6 +4,7 @@
   },
   "workbench.colorTheme": "Dracula",
   "[markdown]": {
-    "editor.quickSuggestions": true
+    "editor.quickSuggestions": true,
+    "editor.wordWrap": "on"
   }
 }

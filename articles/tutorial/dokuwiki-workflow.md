@@ -1,5 +1,5 @@
 ---
-title: Best Practice of Dokuwiki Workflow
+title: Best Practice of Dokuwiki Workflow, Better Than OneNote
 author: Mingshi
 date: 2019-10-18
 ---
@@ -10,12 +10,11 @@ date: 2019-10-18
 static s.t. we can easily backup or restore our documents.
 
 I use DokuWiki a lot, and I prefer to write markdown files locally on my computer and then create a page on DokuWiki web page.
-However, this is not suitable for well-organized files and takes a lot of time, besides, I alwayse forget to upload the files or just
-can't remember which files are not on the cloud.
+However, this is not suitable for well-organized files and takes a lot of time, besides, I alwayse forget to upload the files or just can't remember which files are not on the cloud.
 
-So I need an automation tool to help me simplify jobs above.
+So I need an automation workflow to help me simplify jobs above.
 
-Git is perfect for this situation, it's distributed and easy to control version of files. So I created a DokuWiki workflow based on Git.
+Git is the perfect tool for this situation, it's distributed and easy to control version of files. So I created a DokuWiki workflow based on Git.
 
 ## Structure
 
@@ -27,15 +26,12 @@ Just create a docker container and mount a `volume` where you put the persistent
 
 ## Backup
 
-Generally, after I established a DokuWiki site, I just initialize a repository in DokuWiki's root directory, known as `dokuwiki/` and regularly
-push it to GitHub and other git mirrors as a backup.
+Generally, after I established a DokuWiki site, I just initialize a repository in DokuWiki's root directory, known as `dokuwiki/` and regularly push it to GitHub and other git mirrors as a backup using `crontab`.
 
 ## Write locally & Update Remotely
 
-The core content of a DokuWiki is inside the directory of `dokuwiki/data/pages`, so just initialize another sub repository here and push it to GitHub.
-Then pull the git repository to your local computer, push to GitHub repository after you update the wiki.
+The core content of a DokuWiki is inside the directory of `dokuwiki/data/pages`, so just initialize another sub repository here and push it to GitHub. Then pull the git repository to your local computer, push to GitHub repository after you update the wiki.
 
-The DokuWiki site needs to keep pace with local repository, so add another regular job to pull the git repository.
+The DokuWiki site needs to keep pace with local repository, so add another `crontab` job to pull the git repository.
 
-Notice that files in DokuWiki directory is owned by `daemon` by default, after `sudo git pull` the files are owned by `root`,
-s.t. DokuWiki itself cannot modify them, in other words, you cannot edit the pages on DokuWiki webpage, which is just what we want it to be in order to prevent version conflict.
+Notice that files in DokuWiki directory is owned by `daemon` by default, after `sudo git pull` the files are owned by `root`, that is, DokuWiki itself cannot modify them, in other words, you cannot edit the pages on DokuWiki webpage, which is just what we want it to be in order to prevent version conflict.
