@@ -1,4 +1,4 @@
-title: ${hexo_title} 
+title: ${hexo_title}
 author: ${hexo_author}
 language: ${hexo_lang}
 
@@ -21,8 +21,8 @@ category_dir: categories
 theme: ${theme_name}
 
 search:
-    path: search.json
-    field: post
+  path: search.json
+  field: post
 
 weibo_username: ${hexo_author}
 github_username: ${hexo_author}
@@ -37,10 +37,9 @@ feed:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: ' '
+  content_limit_delim: " "
   order_by: -date
   icon: icon.png
 
 sitemap:
-    path: sitemap.xml
-
+  path: sitemap.xml

@@ -1,65 +1,64 @@
 projects_url: ${github_url}
 
 gravatar:
-    email: ${hexo_email}
+  email: ${hexo_email}
 
 nav:
-    Home: /
-    Projects: ${github_url}
-    #Search: /search/
-    Archives: /archives/
+  Home: /
+  Projects: ${github_url}
+  #Search: /search/
+  Archives: /archives/
 
 highlight: pojoaque
 
-rss: 
+rss:
 
 color_scheme: white
 
 disqus:
-    enabled: true
-    shortname: cmsaxblog
+  enabled: true
+  shortname: cmsaxblog
 
 social_links:
-    github: ${github_url}
-    weibo: ${weibo}
+  github: ${github_url}
+  weibo: ${weibo}
 
 post:
-    show_updated: false
+  show_updated: false
 
 archive:
-    sort_updated: false
+  sort_updated: false
 
 tags_overview: false
 
 posts_overview:
-    show_all_posts: true
+  show_all_posts: true
 
 logo:
-    enabled: false
+  enabled: false
 
 favicon:
-    desktop:
-        url: /images/favicon.ico
-        gravatar: false
-    android:
-        url: /images/favicon.ico
-        gravatar: false
-    apple:
-        url: /images/favicon.ico
-        gravatar: false
+  desktop:
+    url: /images/favicon.ico
+    gravatar: false
+  android:
+    url: /images/favicon.ico
+    gravatar: false
+  apple:
+    url: /images/favicon.ico
+    gravatar: false
 
 page_width: 65
 
 open_graph:
-    fb_app_id:
-    fb_admins:
-    twitter_id:
-    google_plus:
+  fb_app_id:
+  fb_admins:
+  twitter_id:
+  google_plus:
 
 google_analytics:
-    enabled: true
-    id: 'UA-138733674-1'
+  enabled: true
+  id: "UA-138733674-1"
 
 baidu_analytics:
-    enabled: false
-
+  enabled: false

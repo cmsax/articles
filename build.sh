@@ -20,8 +20,8 @@ export github_url="https://github.com/cmsax"
 # Constants
 searchPage='./source/search/index.md'
 
-(envsubst < config_template.yml) >> _config.yml
-(envsubst < theme_config_template.yml) >> _theme_config.yml
+(envsubst <config_template.yml) >>_config.yml
+(envsubst <theme_config_template.yml) >>_theme_config.yml
 
 cat _config.yml
 
@@ -41,7 +41,7 @@ cp -f ../_config.yml ./_config.yml
 cp -f ../_theme_config.yml ./themes/$theme_name/_config.yml
 
 # Search page
-hexo new page search && echo '---\ntitle: Search\ntype: search\n---\n' > $searchPage && cat $searchPage
+hexo new page search && echo '---\ntitle: Search\ntype: search\n---\n' >$searchPage && cat $searchPage
 # Categories automation
 # hexo new page categories
 
@@ -52,4 +52,3 @@ echo $theme_name/_config.yml
 cat ./themes/$theme_name/_config.yml
 
 hexo generate
-
