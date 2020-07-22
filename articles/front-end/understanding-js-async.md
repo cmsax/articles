@@ -1,7 +1,7 @@
 ---
-title: How to Debug Those Projects
+title: Understanding Javascript Async
 author: cmsax
-date: 2020-04-25
+date: 2020-07-22
 ---
 
 ## Heap & Call Stack
