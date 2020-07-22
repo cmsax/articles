@@ -13,8 +13,8 @@ export hexo_description="Monthly research notes about nlp, quant and engineering
 export hexo_permalink=":year/:month/:day/:title/"
 export hexo_seo_title="Daily research notes about nlp, quant and engineering."
 # Social links
-export weibo="https://weibo.com/cmsax"
-export hexo_email="cmsax@live.com"
+export weibo="https://weibo.com/u/6120834507"
+export hexo_email="i@unoiou.com"
 export github_url="https://github.com/cmsax"
 
 # Constants
