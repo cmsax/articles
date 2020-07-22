@@ -1,7 +1,7 @@
 ---
 title: MySQL 主从复制
 author: Mingshi
-date: 2020-07-22
+date: 2020-05-30
 ---
 
 ## 流程

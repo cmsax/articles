@@ -1,7 +1,7 @@
 ---
 title: Golang Concurrency Pattern
 author: cmsax
-date: 2020-07-22
+date: 2020-04-14
 ---
 
 注意：以下所说的线程、进程、协程都是指一个东西：`goroutine`

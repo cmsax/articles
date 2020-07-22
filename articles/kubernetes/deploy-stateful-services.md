@@ -1,7 +1,7 @@
 ---
 title: 使用 Helm 部署有状态服务到 Kubernetes 上
 author: Mingshi
-date: 2020-07-22
+date: 2020-06-18
 ---
 
 ## 原生 k8s 部署有状态服务

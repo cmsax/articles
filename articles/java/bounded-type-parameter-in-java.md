@@ -1,7 +1,7 @@
 ---
 title: Bounded Type Parameter
 author: Mingshi
-date: 2020-07-22
+date: 2020-03-02
 ---
 
 ## Bounded Type

@@ -1,7 +1,7 @@
 ---
 title: Advance in Kubernetes (1)
 author: cmsax
-date: 2020-07-22
+date: 2020-06-20
 ---
 
 ## 修复 RethinkDB 中尚存在的问题

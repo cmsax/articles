@@ -1,7 +1,7 @@
 ---
 title: Secret & Config in K8s and Helm
 author: Mingshi
-date: 2020-07-22
+date: 2020-06-29
 ---
 
 - Secret 在 helm 中可以很方便地通过 template 来定义，并会自动创建到对应命名空间

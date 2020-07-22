@@ -1,7 +1,7 @@
 ---
 title: Currying Functions with `java.util.function.Function`
 author: Mingshi
-date: 2020-07-22
+date: 2020-03-16
 ---
 
 ```java
