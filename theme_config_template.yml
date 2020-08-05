@@ -3,43 +3,43 @@ logo:
   text: Articles
 
 head:
-    favicon: /img/favicon.png
-    canonical_url:
-      open_graph:
-        title: Articles
-        type: blog
-        url: https://www.unoiou.com/articles/
-        image: https://unoiou.com/resume/avatar.png
-        site_name: Articles
-        author: Mingshi Cai
-        description: 一些技术总结
-      structured_data:
-        title: Mingshi Cai's blog
-        description: About coding
-    rss: /atom.xml
+  favicon: /img/favicon.png
+  canonical_url:
+    open_graph:
+      title: Articles
+      type: blog
+      url: https://www.unoiou.com/articles/
+      image: https://unoiou.com/resume/avatar.png
+      site_name: Articles
+      author: Mingshi Cai
+      description: 一些技术总结
+    structured_data:
+      title: Mingshi Cai's blog
+      description: About coding
+  rss: /atom.xml
 navbar:
-    menu:
-      Archives:
-        icon: fab fa-archive
-        url: /archives
-      CV:
-        icon: fab fa-file-pdf
-        url: "https://unoiou.com/resume/mingshi_cai_cv.pdf"
+  menu:
+    Archives:
+      icon: fab fa-archive
+      url: /archives
+    CV:
+      icon: fab fa-file-pdf
+      url: "https://unoiou.com/resume/mingshi_cai_cv.pdf"
 footer:
-    links:
-      Creative Commons:
-        icon: fab fa-creative-commons
-        url: "https://creativecommons.org/"
-      Attribution 4.0 International:
-        icon: fab fa-creative-commons-by
-        url: "https://creativecommons.org/licenses/by/4.0/"
+  links:
+    Creative Commons:
+      icon: fab fa-creative-commons
+      url: "https://creativecommons.org/"
+    Attribution 4.0 International:
+      icon: fab fa-creative-commons-by
+      url: "https://creativecommons.org/licenses/by/4.0/"
 article:
-    highlight:
-      theme: atom-one-dark
-      clipboard: true
-      fold: unfolded
-    thumbnail: false
-    readtime: true
+  highlight:
+    theme: atom-one-dark
+    clipboard: true
+    fold: unfolded
+  thumbnail: false
+  readtime: true
 search:
   type: insight
 
@@ -54,24 +54,24 @@ sidebar:
 widgets:
   - position: left
     type: toc
-    - position: left
-      type: profile
-      author: Mingshi Cai
-      author_title:
-      location: Wuhan
-      avatar: https://unoiou.com/resume/avatar.png
-      avatar_rounded: true
-      social_links:
-        Github:
-          icon: fab fa-github
-          url: "https://github.com/cmsax"
-        Email:
-          icon: fab fa-envelope
-          url: "cmsgroup@whu.edu.cn"
-        RSS:
-          icon: fas fa-rss
-          url: /atom.xml
-      has_hitokoto: false
+  - position: left
+    type: profile
+    author: Mingshi Cai
+    author_title:
+    location: Wuhan
+    avatar: https://unoiou.com/resume/avatar.png
+    avatar_rounded: true
+    social_links:
+      Github:
+        icon: fab fa-github
+        url: "https://github.com/cmsax"
+      Email:
+        icon: fab fa-envelope
+        url: "cmsgroup@whu.edu.cn"
+      RSS:
+        icon: fas fa-rss
+        url: /atom.xml
+    has_hitokoto: false
 
   - position: right
     type: recent_posts
@@ -81,7 +81,7 @@ widgets:
     type: archives
   - position: right
     type: tags
-  
+
 plugins:
   animejs: true
   back_to_top: true
