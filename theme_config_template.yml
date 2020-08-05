@@ -22,9 +22,6 @@ navbar:
     Hisotry: /archives
     My CV: /cv
   links:
-    CV:
-      icon: fa fa-file-pdf
-      url: "https://unoiou.com/resume/mingshi_cai_cv.pdf"
 footer:
   links:
     Build Status:
