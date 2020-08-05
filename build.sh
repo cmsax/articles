@@ -59,7 +59,8 @@ echo '😱 Files:'
 ls
 
 hexo generate
-cp -r ../appendix/* ./appendix
+mkdir ./public/appendix
+cp -r ../appendix/* ./public/appendix
 
 echo '😱 Files:'
 ls

@@ -20,6 +20,7 @@ head:
 navbar:
   menu:
     Archives: /archives
+    My CV: /cv
   links:
     CV:
       icon: fa fa-file-pdf
