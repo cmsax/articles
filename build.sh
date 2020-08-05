@@ -38,6 +38,7 @@ ls ./themes
 
 rm ./source/_posts/*
 cp -r ../articles/* ./source/_posts
+cp -r ../pages/* ./source/
 cp -f ../_config.yml ./_config.yml
 cp -f ../_theme_config.yml ./themes/$theme_name/_config.yml
 
@@ -53,3 +54,5 @@ echo $theme_name/_config.yml
 cat ./themes/$theme_name/_config.yml
 
 hexo generate
+cp -r ../appendix/* ./appendix
+ls
