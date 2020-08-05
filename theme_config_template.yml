@@ -71,7 +71,7 @@ head:
 navbar:
   # Naviagtion menu items
   menu:
-    Home: /articles
+    Home: /
   # Links to be shown on the right of the navigation bar
 
 # Page footer configurations
@@ -175,8 +175,6 @@ widgets:
     # Email address for the Gravatar
     gravatar:
     # URL or path for the follow button
-    # follow_link: 'https://weibo.com/u/3050419984'
-    # Links to be shown on the bottom of the profile widget
     social_links:
       Github:
         icon: fab fa-github
@@ -221,7 +219,7 @@ widgets:
     # Hint text under the email input
     description: 输入邮箱开始订阅，更博后邮件通知！
     # Feedburner ID
-    feedburner_id: Mingshi CaiFeedsId
+    feedburner_id:
   # Google AdSense unit configurations
 #    -
 #        # Where should the widget be placed, left sidebar or right sidebar
@@ -251,10 +249,10 @@ plugins:
     tracking_id:
   # BuSuanZi site/page view counter
   # https://busuanzi.ibruce.info
-  busuanzi: true
+  busuanzi: false
   # Enable the lightGallery and Justified Gallery plugins
   # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/gallery-plugin/
-  gallery: true
+  gallery: false
   # Google Analytics plugin settings
   # https://analytics.google.com
   google_analytics:
@@ -270,7 +268,7 @@ plugins:
   katex: false
   # Enable the MathJax math typesetting support
   # https://www.mathjax.org/
-  mathjax: false
+  mathjax: true
   # Enable the Outdated Browser plugin
   # http://outdatedbrowser.com/
   outdated_browser: false
