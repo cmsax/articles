@@ -1,7 +1,6 @@
 ---
 title: My CV
-author: Mingshi
-date: 2020-08-05
+layout: about
 ---
 
 欢迎通过邮箱与我联系. ;)
