@@ -69,7 +69,7 @@ widgets:
         url: "https://github.com/cmsax"
       Email:
         icon: fa fa-envelope
-        url: "cmsgroup@whu.edu.cn"
+        url: "mailto:cmsgroup@whu.edu.cn"
       RSS:
         icon: fas fa-rss
         url: /atom.xml
