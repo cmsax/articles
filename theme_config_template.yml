@@ -19,11 +19,9 @@ head:
   rss: /atom.xml
 navbar:
   menu:
-    Archives:
-      icon: fab fa-archive
-      url: /archives
+    Archives: /archives
     CV:
-      icon: fab fa-file-pdf
+      icon: fa fa-file-pdf
       url: "https://unoiou.com/resume/mingshi_cai_cv.pdf"
 footer:
   links:
@@ -66,7 +64,7 @@ widgets:
         icon: fab fa-github
         url: "https://github.com/cmsax"
       Email:
-        icon: fab fa-envelope
+        icon: fa fa-envelope
         url: "cmsgroup@whu.edu.cn"
       RSS:
         icon: fas fa-rss
