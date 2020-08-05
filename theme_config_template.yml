@@ -20,11 +20,15 @@ head:
 navbar:
   menu:
     Archives: /archives
+  links:
     CV:
       icon: fa fa-file-pdf
       url: "https://unoiou.com/resume/mingshi_cai_cv.pdf"
 footer:
   links:
+    Build Status:
+      icon: fa fa-bolt
+      url: "https://travis-ci.com/github/cmsax/articles"
     Creative Commons:
       icon: fab fa-creative-commons
       url: "https://creativecommons.org/"
