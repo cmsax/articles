@@ -3,7 +3,7 @@ logo:
   text: Articles
 
 head:
-  favicon: /img/favicon.png
+  favicon: /appendix/favicon.png
   canonical_url:
     open_graph:
       title: Articles

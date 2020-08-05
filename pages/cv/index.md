@@ -1,6 +1,5 @@
 ---
 title: My CV
-layout: about
 ---
 
 欢迎通过邮箱与我联系. ;)

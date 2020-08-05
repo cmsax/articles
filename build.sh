@@ -53,6 +53,8 @@ cat ./_config.yml
 echo $theme_name/_config.yml
 cat ./themes/$theme_name/_config.yml
 
+tree ./source
+
 hexo generate
 cp -r ../appendix/* ./appendix
 ls
