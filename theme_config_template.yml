@@ -1,6 +1,6 @@
 version: 3.0.0
 logo:
-  text: Articles
+  text: Home
 
 head:
   favicon: /appendix/favicon.png
@@ -19,7 +19,7 @@ head:
   rss: /atom.xml
 navbar:
   menu:
-    Archives: /archives
+    Hisotry: /archives
     My CV: /cv
   links:
     CV:
