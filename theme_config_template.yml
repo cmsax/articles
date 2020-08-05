@@ -23,7 +23,7 @@ head:
     url: https://www.unoiou.com/articles/
     # Page cover (og:image) (optional) Default to the Open Graph image or thumbnail of the page
     # You should leave this blank for most of the time
-    image: /img/avatar.png
+    image: https://unoiou.com/resume/avatar.png
     # Site name (og:site_name) (optional)
     # You should leave this blank for most of the time
     site_name: Articles
@@ -71,7 +71,12 @@ head:
 navbar:
   # Naviagtion menu items
   menu:
-    Home: /
+    Archives:
+      icon: fab fa-archive
+      url: /archives
+    CV:
+      icon: fab fa-file-pdf
+      url: https://unoiou.com/resume/mingshi_cai_cv.pdf
   # Links to be shown on the right of the navigation bar
 
 # Page footer configurations
@@ -94,7 +99,7 @@ article:
     # Show copy code button
     clipboard: true
     # Default folding status of the code blocks. Can be "", "folded", "unfolded"
-    fold: folded
+    fold: unfolded
   # Whether to show thumbnail image for every article
   thumbnail: true
   # Whether to show estimated article reading time
@@ -179,15 +184,18 @@ widgets:
       Github:
         icon: fab fa-github
         url: "https://github.com/cmsax"
+      Email:
+        icon: fab fa-envelope
+        url: "cmsgroup@whu.edu.cn"
       RSS:
         icon: fas fa-rss
         url: /atom.xml
-    has_hitokoto: true #左边一言开关，true-开，false-关
+    has_hitokoto: false #左边一言开关，true-开，false-关
 
   # Recommendation links widget configurations
   # Table of contents widget configurations
-  - position: right
-    type: latest_comment
+  # - position: right
+  #   type: latest_comment
   #    -
   #        # Where should the widget be placed, left sidebar or right sidebar
   #        position: left
@@ -213,13 +221,13 @@ widgets:
     position: right
     type: tags
   # Google FeedBurner email subscription widget configurations
-  - # Where should the widget be placed, left sidebar or right sidebar
-    position: right
-    type: subscribe_email
+  -  # Where should the widget be placed, left sidebar or right sidebar
+    # position: right
+    # type: subscribe_email
     # Hint text under the email input
-    description: 输入邮箱开始订阅，更博后邮件通知！
-    # Feedburner ID
-    feedburner_id:
+    # description: 输入邮箱开始订阅，更博后邮件通知！
+    # # Feedburner ID
+    # feedburner_id:
   # Google AdSense unit configurations
 #    -
 #        # Where should the widget be placed, left sidebar or right sidebar
@@ -257,7 +265,7 @@ plugins:
   # https://analytics.google.com
   google_analytics:
     # Google Analytics tracking ID
-    tracking_id:
+    tracking_id: "UA-138733674-1"
   # Hotjar user feedback plugin
   # https://www.hotjar.com/
   hotjar:
@@ -265,10 +273,10 @@ plugins:
     site_id:
   # Enable the KaTeX math typesetting supprot
   # https://katex.org/
-  katex: false
+  katex: true
   # Enable the MathJax math typesetting support
   # https://www.mathjax.org/
-  mathjax: true
+  mathjax: false
   # Enable the Outdated Browser plugin
   # http://outdatedbrowser.com/
   outdated_browser: false
