@@ -17,5 +17,17 @@
     ],
     "description": "文章模板",
     "scope": "markdown,markdown,txt"
+  },
+  "weekly update template": {
+    "prefix": ["wtpl"],
+    "body": [
+      "---",
+      "title: Weekly Update, $CURRENT_MONTH $CURRENT_DATE, $CURRENT_YEAR_SHORT",
+      "author: Mingshi",
+      "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "---"
+    ],
+    "description": "周报模板",
+    "scope": "markdown,markdown,txt"
   }
 }
