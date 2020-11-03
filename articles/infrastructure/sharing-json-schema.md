@@ -1,8 +1,10 @@
-# JSON Schema
+---
+title: 在项目中共享 JSON Schema, Sharing JSON schema Between Projects
+author: Mingshi
+date: 2020-11-03
+---
 
-[toc]
-
-## 什么是 Schema
+## 什么是 JSON Schema
 
 [What is a schema](https://json-schema.org/understanding-json-schema/about.html)
 
