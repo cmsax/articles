@@ -1,97 +1,137 @@
-version: 3.0.0
-logo:
-  text: Home
+# html lang
+language: zh_CN
 
-head:
-  favicon: /appendix/favicon.png
-  canonical_url:
-    open_graph:
-      title: Articles
-      type: blog
-      url: https://www.unoiou.com/articles/
-      image: https://unoiou.com/resume/avatar.png
-      site_name: Articles
-      author: Mingshi Cai
-      description: 一些技术总结
-    structured_data:
-      title: Mingshi Cai's blog
-      description: About coding
-  rss: /atom.xml
-navbar:
-  menu:
-    Hisotry: /archives
-    My CV: /cv
-  links:
+# 导航栏
+menu:
+  博客: /articles
+  关于: /about
+
+# 图标
+favicon: /favicon.ico
+
+# 建议页数大于1开启
+paginator: false
+
+# 头部
+header:
+  blank: true # 头部链接是否新标签页打开
+
+# 文章列表
+list:
+  date: true # 文章列表是否显示日期
+
+# 脚部
 footer:
-  links:
-    Build Status:
-      icon: fa fa-bolt
-      url: "https://travis-ci.com/github/cmsax/articles"
-    Creative Commons:
-      icon: fab fa-creative-commons
-      url: "https://creativecommons.org/"
-    Attribution 4.0 International:
-      icon: fab fa-creative-commons-by
-      url: "https://creativecommons.org/licenses/by/4.0/"
-article:
-  highlight:
-    theme: atom-one-dark
-    clipboard: true
-    fold: unfolded
-  thumbnail: false
-  readtime: true
-search:
-  type: insight
+  display: true # 是否显示footer
+  context: "© Mingshi Cai, unoiou.com " # footer内容
 
-share:
-  type: sharejs
-  install_url: ""
-sidebar:
-  left:
-    sticky: true
-  right:
-    sticky: false
-widgets:
-  - position: left
-    type: toc
-  - position: left
-    type: profile
-    author: Mingshi Cai
-    author_title:
-    location: Wuhan
-    avatar: https://unoiou.com/resume/avatar.png
-    avatar_rounded: true
-    social_links:
-      Github:
-        icon: fab fa-github
-        url: "https://github.com/cmsax"
-      Email:
-        icon: fa fa-envelope
-        url: "mailto:cmsgroup@whu.edu.cn"
-      RSS:
-        icon: fas fa-rss
-        url: /atom.xml
-    has_hitokoto: false
+# 文章页
+post:
+  blank: true # 文章是否新标签页打开
+  backHome: true # 文章末尾是否显示返回首页
+  backHome_hr: true # 返回首页前是否显示分割线
+  backHome_prefix: "↶ " # 返回首页的前缀内容
+  backHome_content: "返回首页" # 返回首页的主体内容
+  backHome_suffix: "" # 返回首页的后缀内容
 
-  - position: right
-    type: recent_posts
-  - position: right
-    type: categories
-  - position: right
-    type: archives
-  - position: right
-    type: tags
+# 标签云
+tags:
+  all: false # 标签云页面是否显示全部标签
 
-plugins:
-  animejs: true
-  back_to_top: true
-  baidu_analytics: false
-  busuanzi: false
-  gallery: false
-  google_analytics:
-    tracking_id: "UA-138733674-1"
-  hotjar: false
-  katex: true
-  mathjax: false
-  outdated_browser: false
-  progressbar: true
+# version: 3.0.0
+# logo:
+#   text: Home
+
+# head:
+#   favicon: /appendix/favicon.png
+#   canonical_url:
+#     open_graph:
+#       title: Articles
+#       type: blog
+#       url: https://www.unoiou.com/articles/
+#       image: https://unoiou.com/resume/avatar.png
+#       site_name: Articles
+#       author: Mingshi Cai
+#       description: 一些技术总结
+#     structured_data:
+#       title: Mingshi Cai's blog
+#       description: About coding
+#   rss: /atom.xml
+# navbar:
+#   menu:
+#     Hisotry: /archives
+#     My CV: /cv
+#   links:
+# footer:
+#   links:
+#     Build Status:
+#       icon: fa fa-bolt
+#       url: "https://travis-ci.com/github/cmsax/articles"
+#     Creative Commons:
+#       icon: fab fa-creative-commons
+#       url: "https://creativecommons.org/"
+#     Attribution 4.0 International:
+#       icon: fab fa-creative-commons-by
+#       url: "https://creativecommons.org/licenses/by/4.0/"
+# article:
+#   highlight:
+#     theme: atom-one-dark
+#     clipboard: true
+#     fold: unfolded
+#   thumbnail: false
+#   readtime: true
+# search:
+#   type: insight
+
+# share:
+#   type: sharejs
+#   install_url: ""
+# sidebar:
+#   left:
+#     sticky: true
+#   right:
+#     sticky: false
+# widgets:
+#   - position: left
+#     type: toc
+#   - position: left
+#     type: profile
+#     author: Mingshi Cai
+#     author_title:
+#     location: Wuhan
+#     avatar: https://unoiou.com/resume/avatar.png
+#     avatar_rounded: true
+#     social_links:
+#       Github:
+#         icon: fab fa-github
+#         url: "https://github.com/cmsax"
+#       Email:
+#         icon: fa fa-envelope
+#         url: "mailto:cmsgroup@whu.edu.cn"
+#       RSS:
+#         icon: fas fa-rss
+#         url: /atom.xml
+#     has_hitokoto: false
+
+#   - position: right
+#     type: recent_posts
+#   - position: right
+#     type: categories
+#   - position: right
+#     type: archives
+#   - position: right
+#     type: tags
+
+# plugins:
+#   animejs: true
+#   back_to_top: true
+#   baidu_analytics: false
+#   busuanzi: false
+#   gallery: false
+#   google_analytics:
+#     tracking_id: "UA-138733674-1"
+#   hotjar: false
+#   katex: true
+#   mathjax: false
+#   outdated_browser: false
+#   progressbar: true

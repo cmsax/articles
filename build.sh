@@ -1,7 +1,7 @@
 #!bin/sh
 # Theme
-export theme_repo="https://github.com/ppoffice/hexo-theme-icarus.git"
-export theme_name="icarus"
+export theme_repo="https://github.com/smallyunet/hexo-theme-yinwang.git"
+export theme_name="yinwang"
 # Meta
 export hexo_title="Articles"
 export hexo_author="cmsax"
