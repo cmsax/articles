@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/articles/img/favicon.png"><title>利用 JSON Schema 来保障数据流中数据的完整和一致性</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/articles/atom.xml" title="Articles" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>利用 JSON Schema 来保障数据流中数据的完整和一致性</h2><p>JSON Schema 是一个比较简单的数据定义规范, 可以先看看官方的文档: <a target="_blank" rel="noopener" href="https://json-schema.org/understanding-json-schema/about.html">What is a schema</a>. 利用 JSON Schema 我们可以在项目需求分析阶段确定数据格式, 方便统一文档, 也可以在具体项目中用于数据有效性验证, 确保整个数据流中数据的完整和一致.</p>
+<h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><p>设计 JSON schema 有点类似于设计 SQL 数据库中的数据表, 设计 SQL 表时需要遵循 3NF, 而在设计 JSON Schema 时需要遵循这些原则:</p>
+<ol>
+<li>可组织. 将一个一个小的 schema 模块组织起来获得更复杂的数据结构.</li>
+<li>可扩展.</li>
+<li>可维护.</li>
+</ol>
+<p>我们可以借助一些工具来定义 Model 类, 然后通过类的继承和扩展实现 Schema 的组织/扩展. 比如 Python 中有 pydantic 包可以很方便的将 Model 导出成 JSON Schema.</p>
+<h2 id="管理和应用"><a href="#管理和应用" class="headerlink" title="管理和应用"></a>管理和应用</h2><p>在存储 Schema 时也不必用 JSON 格式, JSON, TOML, YAML 甚至 python 代码都是可以相互翻译转换的, 尽量使用适合已有系统的, 更可读的方式存储 Schema.</p>
+<p>将 JSON schema 发布到注册表服务并分配一个 id, 并在数据发送时带上 id, 在数据消费时通过 schema id 进行数据校验. 通过 NACOS 可以很方便地实现这个功能:</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20201103100021.png" alt="json schema"></p>
+<p>也可以通过其他的数据库进行存储, 比如 redis/MySQL/mongoDB 等等.</p>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><ol>
+<li>通过 python 代码定义 model</li>
+<li>通过 model 动态生成 schema</li>
+<li>在 CI/CD 中部署 schema 到 NACOS</li>
+<li>在 schema 分组时, 可以参考 redis 的键的设置.</li>
+<li>在发送数据时在数据中带上 schema id</li>
+<li>在消费数据时根据 schema id 验证数据</li>
+</ol>
+<hr><p><span>↶ </span><a href="/">返回首页</a><span></span></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

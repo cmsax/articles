@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/articles/img/favicon.png"><title>Install Python on Windows the Easy Way</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/articles/atom.xml" title="Articles" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>Install Python on Windows the Easy Way</h2><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>The sane way to manage software on Windows is using <code>Chocolatey</code>. It makes it possible and uncomplicated to install softwares automatically by just one command as easy as abc.</p>
+<p>Besides, it’s open source and totally free for personal use. There are over 6500 community maintained packages on <code>Chocolatey</code> includes common softwares like Python, Adobe PDF Reader, Web Browsers and Anaconda.</p>
+<p>The install process is smooth, just type a line of command and click <code>Enter</code>, you will have your well configured software installed after a cup of tea.</p>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="Install-Chocolatey"><a href="#Install-Chocolatey" class="headerlink" title="Install Chocolatey"></a>Install Chocolatey</h3><blockquote>
+<p>Checkout this <a target="_blank" rel="noopener" href="https://chocolatey.org/install">official tutorial</a> for installing <code>Chocolatey</code>.</p>
+</blockquote>
+<ol>
+<li>Right click the Windows icon on bottom-left of your screen, and click <code>Powershell (as Admin)</code> option like below:</li>
+</ol>
+<p><img src="https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t1.png" alt="t1"></p>
+<ol>
+<li>When the User-Account-Control windows displays, click <code>Yes</code>.</li>
+</ol>
+<p><img src="https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t2.png" alt="t2"></p>
+<ol>
+<li>Paste the scripts below to the window:</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass <span class="literal">-Scope</span> <span class="keyword">Process</span> <span class="literal">-Force</span>; <span class="built_in">iex</span> ((<span class="built_in">New-Object</span> System.Net.WebClient).DownloadString(<span class="string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t3.png" alt="t3"></p>
+<ol>
+<li>Type <code>Enter</code>, when it finished, the window should be like below:</li>
+</ol>
+<p><img src="https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t4.png" alt="t4"></p>
+<ol>
+<li>Check the installation. Type <code>choco</code> or <code>choco -?</code>, if you get result like below, it means the installation is OK.</li>
+</ol>
+<p><img src="https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t5.png" alt="t5"></p>
+<ol>
+<li>Reboot your computer to activate some functionality of <code>Chocolatey</code>.</li>
+</ol>
+<p>Done!</p>
+<h3 id="Install-Python"><a href="#Install-Python" class="headerlink" title="Install Python"></a>Install Python</h3><h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><p>Try <code>choco -?</code> to see its brief introduction. In this case, you will use following commands:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">choco list</span><br><span class="line">choco search [software_name]</span><br><span class="line">choco install [software_name1, software_name2, ..., software_nameN]</span><br></pre></td></tr></table></figure>
+
+<p>To list local packages, type <code>choco list</code> on PowerShell.</p>
+<p>To search specific software or package, e.g. Python, just type <code>choco search python</code>.</p>
+<p>To install packages or softwares, e.g. Python and Anaconda, just type <code>choco install python3 python2 anaconda</code></p>
+<h4 id="Easy-Way"><a href="#Easy-Way" class="headerlink" title="Easy Way"></a>Easy Way</h4><p>Open your browser and go to <a target="_blank" rel="noopener" href="https://chocolatey.org/packages">https://chocolatey.org/packages</a>.</p>
+<p>Search the package you want.</p>
+<p><img src="https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t6.png" alt="t6"></p>
+<p>Now you get the available packages and installation command.</p>
+<p><img src="https://seccdn.unoiou.com/img/articles/tutorial-install-chocolatey/t7.png" alt="t7"></p>
+<p>Copy the installation command and paste it to PowerShell window. Click <code>Enter</code> to run it.</p>
+<hr><p><span>↶ </span><a href="/">返回首页</a><span></span></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

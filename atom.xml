@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Articles</title>
+  <icon>https://blog.unoiou.com/articles/icon.png</icon>
+  
+  <link href="https://blog.unoiou.com/articles/atom.xml" rel="self"/>
+  
+  <link href="https://blog.unoiou.com/articles/"/>
+  <updated>2020-12-01T04:03:23.754Z</updated>
+  <id>https://blog.unoiou.com/articles/</id>
+  
+  <author>
+    <name>cmsax</name>
+    <email>i@unoiou.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我推荐你在 Windows 10 上安装这些应用</title>
+    <link href="https://blog.unoiou.com/articles/2020/11/13/interesting-things/apps-on-windows/"/>
+    <id>https://blog.unoiou.com/articles/2020/11/13/interesting-things/apps-on-windows/</id>
+    <published>2020-11-13T00:00:00.000Z</published>
+    <updated>2020-12-01T04:03:23.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这些程序中, 有很多都是我用了几年的, 它们都很完美. 其中不乏个人开发者开发和更新维护的软件, 希望大家用的时候如果觉得好用, 可以推荐给其他人.&lt;/p&gt;
+&lt;p&gt;对于高效工作和生活来说, 这些是必备程序:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Redis 数据类型及应用</title>
+    <link href="https://blog.unoiou.com/articles/2020/11/12/database/redis-points/"/>
+    <id>https://blog.unoiou.com/articles/2020/11/12/database/redis-points/</id>
+    <published>2020-11-12T00:00:00.000Z</published>
+    <updated>2020-12-01T04:03:23.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据类型的比较&quot;&gt;&lt;a href=&quot;#数据类型的比较&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计健壮和幂等的 Web API</title>
+    <link href="https://blog.unoiou.com/articles/2020/11/10/infrastructure/design-robust-web-api/"/>
+    <id>https://blog.unoiou.com/articles/2020/11/10/infrastructure/design-robust-web-api/</id>
+    <published>2020-11-10T00:00:00.000Z</published>
+    <updated>2020-12-01T04:03:23.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;网络和服务端的问题都会导致 API 出错, 解决这个问题需要遵循 3 个原则:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;网络故障后, 客户端需要重新发送请求来保持一致性&lt;/li&gt;
+&lt;li&gt;客户端因为网络故障重新发送的请求需要保持幂等性, 也就是说需要带上一个用于保持幂等的</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>利用 JSON Schema 来保障数据流中数据的完整和一致性</title>
+    <link href="https://blog.unoiou.com/articles/2020/11/03/infrastructure/sharing-json-schema/"/>
+    <id>https://blog.unoiou.com/articles/2020/11/03/infrastructure/sharing-json-schema/</id>
+    <published>2020-11-03T00:00:00.000Z</published>
+    <updated>2020-12-01T04:03:23.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;JSON Schema 是一个比较简单的数据定义规范, 可以先看看官方的文档: &lt;a href=&quot;https://json-schema.org/understanding-json-schema/about.html&quot;&gt;What is a schema&lt;/a&gt;. 利用</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Weekly Update, 10 27, 20</title>
+    <link href="https://blog.unoiou.com/articles/2020/10/27/weekly-update/20201027/"/>
+    <id>https://blog.unoiou.com/articles/2020/10/27/weekly-update/20201027/</id>
+    <published>2020-10-27T00:00:00.000Z</published>
+    <updated>2020-12-01T04:03:23.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Work&quot;&gt;&lt;a href=&quot;#Work&quot; class=&quot;headerlink&quot; title=&quot;Work&quot;&gt;&lt;/a&gt;Work&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Fix performance issues when using python</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

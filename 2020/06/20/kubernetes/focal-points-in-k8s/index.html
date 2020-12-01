@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/articles/img/favicon.png"><title>Advance in Kubernetes (1)</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/articles/atom.xml" title="Articles" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>Advance in Kubernetes (1)</h2><h2 id="修复-RethinkDB-中尚存在的问题"><a href="#修复-RethinkDB-中尚存在的问题" class="headerlink" title="修复 RethinkDB 中尚存在的问题"></a>修复 RethinkDB 中尚存在的问题</h2><ul>
+<li>persistentVolumeClaim 拿不到 PV 的原因未知，可能是 pv 没创建对？可能是 pvc 的要求不满足？</li>
+<li>尝试了 hostPath 但尚未尝试其他类型的 pv</li>
+</ul>
+<h2 id="存储卷"><a href="#存储卷" class="headerlink" title="存储卷"></a>存储卷</h2><ul>
+<li>Volume 和 PersistentVolume 用于 pod 存储数据</li>
+<li>hostPath 作为 host 上的一个物理的文件夹不支持并发读写</li>
+</ul>
+<h2 id="Affinity-和-AntiAffinity"><a href="#Affinity-和-AntiAffinity" class="headerlink" title="Affinity 和 AntiAffinity"></a>Affinity 和 AntiAffinity</h2><ul>
+<li>Pod 和 Node 都能够设置相互的亲和度和逆亲和度</li>
+<li>通过 Label 或者其他的一些可哈希的具有唯一标志的资源来判断</li>
+</ul>
+<h2 id="Taint-和-Tolerance"><a href="#Taint-和-Tolerance" class="headerlink" title="Taint 和 Tolerance"></a>Taint 和 Tolerance</h2><ul>
+<li>可以设置 Node 存在一些「污点」，即 Taint ，只有忍受 Node 的<strong>全部</strong>污点的 Pod 才能够被分配到这个有污点的 Node 上乃至在上面运行</li>
+<li>Node 偶尔会根据污点「驱逐」一些 Pod ，即使 Pod 忍受了这些污点，还是可能被驱逐。因此还可以设置 Pod 被驱逐后在 Node 上存活的时间长度</li>
+</ul>
+<h2 id="几种重要的资源的理解"><a href="#几种重要的资源的理解" class="headerlink" title="几种重要的资源的理解"></a>几种重要的资源的理解</h2><ul>
+<li>ReplicaController 是比较基础的资源，用于定义一些 Pod</li>
+<li>Deployment 是早期定义一组服务的比较常用的资源，后来被 Statefule-Set 所取代</li>
+<li>Service 不包含 Pod 定义，主要用在服务发现中，定义集群向外暴露的服务</li>
+<li>Ingress 使用反向代理和服务发现机制，将给定 Name 的 Service 通过特定的 Port 和 HostName 暴露出去</li>
+</ul>
+<p>以上所有资源都可以通过 <code>kubectl create -f aaaa.yaml</code> 来创建</p>
+<h2 id="使用-Helm"><a href="#使用-Helm" class="headerlink" title="使用 Helm"></a>使用 Helm</h2><p>使用 Helm 管理部署非常简单，但偶尔还需要手动改一下项目的 Chart 模板。</p>
+<hr><p><span>↶ </span><a href="/">返回首页</a><span></span></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/articles/img/favicon.png"><title>Optimize InfluxDB Data Insertion</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/articles/atom.xml" title="Articles" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>Optimize InfluxDB Data Insertion</h2><h2 id="Issue-Description"><a href="#Issue-Description" class="headerlink" title="Issue Description"></a>Issue Description</h2><p>We know that InfluxDB can query time series data more efficiently than SQL databases, but there are still some bugs when we insert or query data, they are:</p>
+<ul>
+<li>SQL can return a result eventually even if it costs lots of time, but InfluxDB sometimes does return empty result set.</li>
+<li>Data in InfluxDB might be lost and we can find it back by <code>backup &amp; import</code>.</li>
+<li>InfluxDB over Nginx or other HTTP server may encounter various problem such as <code>504 gateway time-out</code>.</li>
+</ul>
+<p>Besides, importing data to InfluxDB is really slow. UDP is fast, but it’s not reliable for this case.</p>
+<h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><p>To optimize the process of importing data, we can do these things.</p>
+<ul>
+<li>Add more memory to your server.</li>
+<li>Set the HTTP server’s <code>time-out</code> and <code>max request size</code> to avoid <code>gateway timeout</code> or other HTTP server badcode.</li>
+<li>Using agent server like Nginx will make double-transfer your data packet, because request data is first sent to Nginx, and Nginx will not transfer your request data until it take over the request body.</li>
+<li>Do not split your request to batches as possible as you can.</li>
+<li>Dump your data to import and not use HTTP request.</li>
+</ul>
+<hr><p><span>↶ </span><a href="/">返回首页</a><span></span></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

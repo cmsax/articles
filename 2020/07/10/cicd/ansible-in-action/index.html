@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/articles/img/favicon.png"><title>Ansible： 老项目 Devops 救星</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/articles/atom.xml" title="Articles" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>Ansible： 老项目 Devops 救星</h2><p>注：本文首发于<code>武大NLP实验室</code>公众号，ID：<code>WHU_NLP</code>，欢迎关注！</p>
+<h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><p>实验室服务器数量的增多让基础设施变得更加复杂，当需要更新一些实验和项目所依赖的基础环境时的你：</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200702103555.png" alt="环境配置1"></p>
+<p>此外，横跨几届的老项目的部署和维护已经成为了开发人员的噩梦，如果文档不健全，在更新部署时可能需要一天的时间，而文档健全时的情况会好一些，只需要 24 个小时：</p>
+<img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200702002712.png" alt="环境管理" style="zoom:70%;" />
+
+<p>并且，在多人共享服务器时，权限控制也很麻烦。为了避免某位有 root 权限的用户的误操作如清理了某些目录或者停止了某些核心进程而导致服务器运行异常，管理员往往只给用户普通权限，而这样一刀切的处理方式又会使管理员频繁地因为 root 权限申请被打扰。</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200702002732.png" alt="权限管理"></p>
+<h2 id="可能的解决方法"><a href="#可能的解决方法" class="headerlink" title="可能的解决方法"></a>可能的解决方法</h2><p>那么有什么办法来解决上面的这些问题呢？手动运行命令可能是对基础设施进行维护最直接的方法，但效率实在太低，而且失误的概率较大。</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200702105941.png" alt="image-20200702105941121"></p>
+<p>针对具体任务编写小脚本似乎会效率更高，但调试的过程可能会比较痛苦，扩展性、安全性、可读性均比较差，而且运行记录难以追踪、运行后难以回溯。</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200702003352.png" alt="image-20200702003352104"></p>
+<p>那么有没有一种简单解决上述问题的方法呢？</p>
+<h2 id="基础设施-架构即代码-Infrastructure-as-Code"><a href="#基础设施-架构即代码-Infrastructure-as-Code" class="headerlink" title="基础设施/架构即代码(Infrastructure as Code)"></a>基础设施/架构即代码(Infrastructure as Code)</h2><p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200703111856.png" alt="Infrastructure as code defines the environment in a versioned file"></p>
+<p>Infrastructure as Code 简称 IaC，是 DevOps 的一项重要实践，具体就是用一种描述性的(declarative)模型来管理基础设施，比如网络、服务器、虚拟机、负载平衡器及他们的拓扑结构等资源。IaC 的重要原则是幂等性，对于一套固定的基础设施，相同的描述性的配置总会让基础设施进入到一个相同的状态。这种幂等性让基础设施的状态可复制、可扩展、可追踪并且可回溯。IaC 通常和持续交付结合使用。</p>
+<p>IaC 实践中通常使用一种描述性的编码语言，如 JSON, YAML, XML 等，这些语言大多简单易学，且具备良好的可读性。下面这段 YAML 代码所描述的内容和 MarkDown 十分类似，相信不是程序员也能理解其含义。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Employee records</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">martin:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Martin</span> <span class="string">D&#x27;vloper</span></span><br><span class="line">    <span class="attr">job:</span> <span class="string">Developer</span></span><br><span class="line">    <span class="attr">skills:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">python</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">perl</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">pascal</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">tabitha:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Tabitha</span> <span class="string">Bitumen</span></span><br><span class="line">    <span class="attr">job:</span> <span class="string">Developer</span></span><br><span class="line">    <span class="attr">skills:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">lisp</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">fortran</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">erlang</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="可用方案对比"><a href="#可用方案对比" class="headerlink" title="可用方案对比"></a>可用方案对比</h3><p>IaC 发展已久，目前有许多可用方案。</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200703115355.png" alt="IaC 方案对比"></p>
+<p>通过从易用性、扩展性和价格等维度对比已有的 IaC 方案，我们发现 Ansible 是一个比较好的选择。除此之外，Ansible 相比于其他的项目，还有一项最重要的特点，在于 Agentless，即无客户端/无代理的运行模式。</p>
+<h3 id="Ansible：开源的基础设施即代码解决方案"><a href="#Ansible：开源的基础设施即代码解决方案" class="headerlink" title="Ansible：开源的基础设施即代码解决方案"></a>Ansible：开源的基础设施即代码解决方案</h3><p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200703120008.png" alt="image-20200703120008312"></p>
+<p>Ansible 的第一个版本发布于 2012 年 2 月，至今已经迭代了很长时间。</p>
+<p>Ansible 基于纯文本 YAML 文件来描述资源的行为、状态或者特定任务，几乎所有地方都支持设置变量，包括 playbook、文件、inventory、命令、从受控主机传回的变量等。使用 Ansible 的项目具有高可读性（人 &amp; 计算机）。</p>
+<p>简单来说，它具有这些特点：</p>
+<ul>
+<li>简单 👴<ul>
+<li>基于 yaml，高可读性</li>
+<li>不需要特定的开发技能</li>
+<li>基于已有的社区轮子快速部署</li>
+</ul>
+</li>
+<li>强大 👍<ul>
+<li>应用部署</li>
+<li>配置管理</li>
+<li>定制工作流</li>
+<li>管理应用的生命周期</li>
+</ul>
+</li>
+<li>无代理 👏<ul>
+<li>无代理架构</li>
+<li>基于 OpenSSH &amp; WRM(远程 Powershell)</li>
+<li>无需更新配置</li>
+<li>更安全可靠、更高效</li>
+</ul>
+</li>
+</ul>
+<h3 id="Ansible-架构"><a href="#Ansible-架构" class="headerlink" title="Ansible 架构"></a>Ansible 架构</h3><p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200702003725.png" alt="img"></p>
+<p>Ansible 架构简单直接，Inventory 代表受管理的节点或其他资源，用户在建立控制节点到受控节点的连接后，通过直接指定命令或编写一种叫做 Playbook 的配置文件来执行特定的任务。对于 Linux 节点，使用 SSH 建立连接；而对于 Windows 节点，则使用 WRM(Windows Remote Management) 服务。</p>
+<h3 id="Ansible-对象"><a href="#Ansible-对象" class="headerlink" title="Ansible 对象"></a>Ansible 对象</h3><p>在 Ansible 中，我们通常会用到这些对象：</p>
+<ul>
+<li>Inventory：受控资源，如主机</li>
+<li>Modules：预定义且可扩展的用于执行特定任务的模块</li>
+<li>Tasks：用户描述的特定的任务</li>
+<li>Playbooks：用户描述的特定任务集，描述一系列特定的任务及配套行为</li>
+</ul>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200703122054.png" alt="image-20200703122053922"></p>
+<p>此外，Ansible 还有一个类似于 GitHub 的社区，叫 Ansible Galaxy。在这个社区中，有大量社区成员预定义的解决特定任务的工具包，我们既可以直接下载使用，也可以将合适的工具包集成到自有的 Playbooks 中。</p>
+<h2 id="在实验室的应用案例"><a href="#在实验室的应用案例" class="headerlink" title="在实验室的应用案例"></a>在实验室的应用案例</h2><h3 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h3><p>实验室中有许多的老项目，这些项目的测试和生产环境尚未分离，测试依赖于 Monkey Test；部署和运行依赖于特定的运行环境，且需要大量的手工操作，成功率较低。</p>
+<p>迁移这些老项目到新的 Kubernetes 集群的开发成本较高，因此我们希望借助于 Ansible 来解决这些问题，实现这些功能：</p>
+<ul>
+<li>测试和生产环境分离</li>
+<li>旧项目依赖的版本控制</li>
+<li>权限控制</li>
+<li>不同依赖之间环境隔离</li>
+<li>可追踪、回溯、扩展</li>
+<li>自动部署</li>
+</ul>
+<h3 id="具体应用"><a href="#具体应用" class="headerlink" title="具体应用"></a>具体应用</h3><p>对于旧项目，在坚持采用规范的开发流程的前提下，一个新的 Feature 从第一个 MR（Merge Request 合并请求） 到成功上线在时序图中需要超过 30 步的操作。这样的流程过度依赖人工，不同的环境依赖于不同的 GitLab Runner，而 Runner 的设置与具体项目耦合，频繁更改单个项目的 Runner 容易出错，而为测试和生产项目设置不同的 Runner 则会徒增许多重复的项目，衍生出许多其他的问题。</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200702004157.png" alt="image-20200702004157733"></p>
+<p>因此，我们将 GitLab CI 和 Ansible 结合。具体来说包含这些关键步骤：</p>
+<ul>
+<li>准备多台主机（虚拟），并添加到 Ansible Inventory 中</li>
+<li>在 GitLab 创建一个用于管理旧项目基础架构的项目，并指定 Runner 为 Ansible 控制节点</li>
+<li>在 Ansible 项目中，为生产环境和测试环境指定不同的 Inventory，创建 Playbook 定义旧项目构建、部署、测试任务的具体行为、状态和依赖的环境</li>
+<li>定义 GitLab CI 流水线，配置持续集成和持续部署</li>
+</ul>
+<p>通过这些关键步骤，我们实现了预期的功能。具体来说：</p>
+<ol>
+<li>项目开发者提交代码后触发 GitLab 流水线，Ansible 控制节点会运行 Playbook 中定义的行为，在测试环境中更新依赖并运行测试任务</li>
+<li>在 MR 通过后 Ansible 控制节点自动在预发布(Staging)环境中部署</li>
+<li>项目管理者确认 Staging 环境中功能正常后，点击 GitLab 流水线的手动操作即可按照设定比例 10%，50%，100% 等更新生产环境。</li>
+</ol>
+<p>下图是我们 Ansible 项目中的具体文件，其中 <code>.gitlab-ci.yml</code> 是 GitLab CI 流水线配置文件，而 <code>build.yaml</code>, <code>test.yaml</code> 和 <code>deploy.yaml</code> 则是 Ansible Playbook 文件。通过将项目的依赖和行为描述成 YAML 文件，我们可以将依赖、环境、行为的更新转化成对代码仓库的一次 MR。</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200703125905.png" alt="image-20200703125905619"></p>
+<p>下图是流水线运行的截图，其中 <code>deploy</code> 是手动操作，用于将项目部署到 <code>staging</code> 环境。</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200703125803.png" alt="image-20200703125803430"></p>
+<h3 id="效果对比"><a href="#效果对比" class="headerlink" title="效果对比"></a>效果对比</h3><p>某不愿透露姓名的项目组成员表示，对于旧项目的更新和部署，再也不用担心秃头了。</p>
+<p><img src="https://latina-1253549750.cos.ap-shanghai.myqcloud.com/essay/imgs/20200703123501.png" alt="image-20200703123501733"></p>
+<h3 id="Ansible-最佳实践指南"><a href="#Ansible-最佳实践指南" class="headerlink" title="Ansible 最佳实践指南"></a>Ansible 最佳实践指南</h3><p>根据我们的开发经验和 Ansible 官方指南，我们认为基于 Ansible 开发需要遵循以下原则：</p>
+<ul>
+<li>代码越复杂，生产效率越低</li>
+<li>提高 Playbook 中的任务和变量定义的可读性</li>
+<li>依据声明式的思想编写 Playbook 文件，Playbook 不是 Coding</li>
+<li>请为 Ansible Playbook 编写单元测试</li>
+</ul>
+<h3 id="Ansible-的局限"><a href="#Ansible-的局限" class="headerlink" title="Ansible 的局限"></a>Ansible 的局限</h3><p>我们也发现了 Ansible 的一些局限，主要是：</p>
+<ol>
+<li>Ansible 比较适合部署老的项目，新的项目不建议使用，请直接上 Kubernetes 谢谢。</li>
+<li>Ansible 不支持服务的底层环境隔离，如网络、系统内核版本等。</li>
+<li>Ansible 的响应速度不行，尤其是文件传输速度太慢（如果无法忍受，可以自己写 Module，根据特定业务需求扩展文件传输算法，使用文件分块算法等方式）</li>
+</ol>
+<p>对于新项目的更优的选择：以 Kubernetes, OpenStack, Openshift 为代表的服务编排平台，支持操作系统即代码、服务编排、网络隔离等高级特性。</p>
+<h3 id="效果与展望"><a href="#效果与展望" class="headerlink" title="效果与展望"></a>效果与展望</h3><p>实验室的大多数项目已经部署在了 Kubernetes 上，对于老项目而言，Ansible 无疑是最佳选择。通常，实验室中一个项目组使用了 Ansible 后，其他项目组也可以参考已有的写法快速实现实现自己项目的自动化部署。</p>
+<p>安全性、可维护性、可扩展性和易用性是我们的追求，相信随着 DevOps 技术的发展，未来我们可以为实验室项目成员提供更好的 DevOps 体验。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li>Infrastructure as Code: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Infrastructure_as_code">https://en.wikipedia.org/wiki/Infrastructure_as_code</a></li>
+<li>Ansible Repository: <a target="_blank" rel="noopener" href="https://github.com/ansible">https://github.com/ansible</a></li>
+<li>YAML language spec: <a target="_blank" rel="noopener" href="https://yaml.org/spec/1.2/spec.html">https://yaml.org/spec/1.2/spec.html</a></li>
+<li>Ansible official documentation: <a target="_blank" rel="noopener" href="https://docs.ansible.com/">https://docs.ansible.com/</a></li>
+<li>Ansible Galaxy: <a target="_blank" rel="noopener" href="http://galaxy.ansible.com/">http://galaxy.ansible.com/</a></li>
+<li>Ansible Module Index: <a target="_blank" rel="noopener" href="https://docs.ansible.com/ansible/latest/modules/modules_by_category.html">https://docs.ansible.com/ansible/latest/modules/modules_by_category.html</a></li>
+<li>GitLab CI official documentation: <a target="_blank" rel="noopener" href="https://docs.gitlab.com/ce/ci/">https://docs.gitlab.com/ce/ci/</a></li>
+<li>YAML Syntax: <a target="_blank" rel="noopener" href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html">https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html</a></li>
+<li>Ansible Best Practices ANSIBLE BEST PRACTICES: THE ESSENTIALS</li>
+</ul>
+</blockquote>
+<hr><p><span>↶ </span><a href="/">返回首页</a><span></span></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

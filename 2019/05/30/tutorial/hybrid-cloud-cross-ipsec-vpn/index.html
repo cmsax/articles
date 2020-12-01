@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/articles/img/favicon.png"><title>Hybrid Cloud Across IPsec VPN Tunnel</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/articles/atom.xml" title="Articles" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>Hybrid Cloud Across IPsec VPN Tunnel</h2><h2 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><ul>
+<li>Install IPsec VPN on public cloud machine.</li>
+<li>Connect the router in LAN to the VPN.</li>
+<li>Configurate gateway in the cloud machine.</li>
+<li>Setup NGINX on the cloud machine.</li>
+<li>Add server conf file to <code>/etc/nginx/sites-enabled/</code> and write it in your way.</li>
+<li>Reload your NGINX server and visit the URL to see what happens.</li>
+</ul>
+<h2 id="NGINX-Conf-Demo"><a href="#NGINX-Conf-Demo" class="headerlink" title="NGINX Conf Demo"></a>NGINX Conf Demo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name api.contoso.com;</span><br><span class="line">        location &#x2F; &#123;</span><br><span class="line">                proxy_pass http:&#x2F;&#x2F;192.168.0.70:8848;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li>Ubuntu saves your life not centOS.</li>
+</ul>
+<hr><p><span>↶ </span><a href="/">返回首页</a><span></span></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

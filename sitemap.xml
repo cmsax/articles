@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/search/index.html</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/07/10/cicd/ansible-in-action/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2018/07/06/cicd/electron-continuous-integration/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/08/22/cicd/integrate-influxdb-service-in-gitlab-ci/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/04/18/database/influxdb-insert-optimization/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/05/22/database/locks-in-mysql/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/05/26/database/mysql-backup-in-action/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/05/30/database/mysql-master-slave/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/11/12/database/redis-points/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/06/12/front-end/react-focal-points/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/06/14/front-end/understanding-js-async/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/04/14/golang/go-concurrency/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/04/25/guide/how-to-debug/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/05/03/guide/simple-reason-why-need-to-avoid-side-effect/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/11/10/infrastructure/design-robust-web-api/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/11/03/infrastructure/sharing-json-schema/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/11/13/interesting-things/apps-on-windows/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/03/02/java/bounded-type-parameter-in-java/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/03/12/java/constructer-chaining/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/03/16/java/currying-funcs-in-java/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/03/22/java/null-thins-in-java/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/03/27/java/packages-in-java/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/06/14/kubernetes/conclusion-in-k8s/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/06/18/kubernetes/deploy-stateful-services/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/06/20/kubernetes/focal-points-in-k8s/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/06/29/kubernetes/secret-config-in-k8s/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/04/26/python/solve-multiprocessing-decorator-pickle-issue/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/04/18/time-wasting-stuff/fix-windows-wsl-vim-font-issue/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/04/17/tutorial/articles-continuous-deployment/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/10/18/tutorial/dokuwiki-workflow/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/04/18/tutorial/fix-vim-bg-color-on-windows/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/05/30/tutorial/hybrid-cloud-cross-ipsec-vpn/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2019/04/26/tutorial/install-python-the-easy-way/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/09/27/weekly-update/200927/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/10/16/weekly-update/20201016/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/2020/10/27/weekly-update/20201027/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.unoiou.com/articles/cv/index.html</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>https://blog.unoiou.com/articles</loc>
+    <lastmod>2020-12-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+
+  
+</urlset>

@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/articles/img/favicon.png"><title>Our Solution to Electron Continuous Integration</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/articles/atom.xml" title="Articles" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>Our Solution to Electron Continuous Integration</h2><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>TDD and Auto DevOps recently have become popular for rapid iteration in small team.</p>
+<p>Though I am just a freshman in front-end development, I have to choose a suitable technology stack for our coming project called <code>Shannon</code>.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><ul>
+<li>Electron for building cross-platform desktop app.</li>
+<li>Electron-Vue as JS framework.</li>
+<li>Spectron as Electron functional TestSuit.</li>
+<li>Vue-test-utils as Vue components unit TestSuit.</li>
+<li>GitLab, GitLab runner as CI-CD envrionment.</li>
+<li>Kubernetes as backend.</li>
+</ul>
+<h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><ul>
+<li>Build a docker image for buiding and testing our app.</li>
+<li>Create a <code>.gitlab-ci.yml</code> file to config our ci-cd tasks.</li>
+<li>Write our test codes.</li>
+<li>Write our app.</li>
+<li>Improve our test code coverage.</li>
+<li>Iteration.</li>
+</ul>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><p>Dependencies of a Docker image for running an Electron app:</p>
+<ul>
+<li>Xvfb</li>
+<li>wine32</li>
+<li>node.js V8</li>
+<li>npm or yarn</li>
+</ul>
+<p>The image has been published to docker hub, you can pull it by:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull windworship/npm-image</span><br></pre></td></tr></table></figure>
+
+<p>Do not catch any exceptions in your test code.</p>
+<hr><p><span>↶ </span><a href="/">返回首页</a><span></span></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/articles/img/favicon.png"><title>MySQL 锁相关知识总结</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/articles/atom.xml" title="Articles" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>MySQL 锁相关知识总结</h2><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>数据库事务: **事务(Transaction)**，一般是指要做的或所做的事情。在计算机术语中是指访问并可能更新数据库中各种数据项的一个程序执行单元(unit)。在计算机术语中，事务通常就是指数据库事务。</p>
+<p>一个数据库事务通常包含对数据库进行读或写的一个操作序列。它的存在包含有以下两个目的：</p>
+<blockquote>
+<p>1、为数据库操作提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。<br>2、当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。</p>
+</blockquote>
+<p>即:1.当一个事务被提交给了 DBMS（数据库管理系统），则 DBMS 需要确保该事务中的所有操作都成功完成且其结果被永久保存在数据库中，如果事务中有的操作没有成功完成，则事务中的所有操作都需要被回滚，回到事务执行前的状态（要么全执行，要么全都不执行）; 2.同时，该事务对数据库或者其他事务的执行无影响，所有的事务都好像在独立的运行。</p>
+<p><strong>事务的 4 个属性 acid</strong>: atom 原子性,作为一个整体被执行,consistency 一致性,数据满足完整性约束,isolation 隔离性,不影响其他事物,durability 持久性,事务执行成功后对数据库的修改被永久记录.</p>
+<h2 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h2><p>Mysql 可以设置 4 个隔离级别,允许用户在性能和可靠性之间作出选择.</p>
+<p>Read uncommitted, <strong>会出现读到了未提交的数据(脏读);</strong> 事务 b 读到了事务 a 尚未提交的数据,该数据可能会被事务 a 回滚.即<strong>脏读</strong>.</p>
+<p>read committed, <strong>会出现读到的数据被别的事务提交更新了,也就是在同一个事务中,两次读到的数据不是一致的</strong>(<strong>不可重复读</strong>); 事务 a 先读取了数据,事务 b 也读区了,但 b 更新了数据并提交了事务,而 a 再次读数据时,数据已经变了.即<strong>不可重复读</strong>.</p>
+<p>repeatable read, mysql 的默认隔离级别;尽管通过 <strong>Next-Key Lock</strong> 某种程度上解决了幻读读问题,但仍可能出现幻读(事务在插入事先检测不存在的记录时，惊奇的发现这些数据已经存在了，之前的检测读获取到的数据如同鬼影一般。<strong>*在一个事务中，同一个范围内的记录被读取时，其他事务向这个范围添加了新的记录</strong>。*).</p>
+<p><strong>幻读例子</strong>: 重新开启了两个会话 <code>SESSION 1</code> 和 <code>SESSION 2</code>，在 <code>SESSION 1</code> 中我们查询全表的信息，没有得到任何记录；在 <code>SESSION 2</code> 中向表中插入一条数据并提交；由于 <code>REPEATABLE READ</code> 的原因，再次查询全表的数据时，我们获得到的仍然是空集，但是在向表中插入同样的数据却出现了错误。</p>
+<p>这种现象在数据库中就被称作幻读，<strong>虽然我们使用查询语句得到了一个空的集合，但是插入数据时却得到了错误，好像之前的查询是幻觉一样</strong>。</p>
+<p>serializable.<strong>串行</strong>;最高级别,但是代价高,性能低,一般很少使用,<strong>事务串行执行</strong>.通常,在实际应用中自己加锁来避免幻读.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ru</td>
+<td>可能出现</td>
+<td>可能出现</td>
+<td>可能出现</td>
+</tr>
+<tr>
+<td>Rc</td>
+<td></td>
+<td>可能出现</td>
+<td>可能出现</td>
+</tr>
+<tr>
+<td>Rr</td>
+<td></td>
+<td></td>
+<td>可能出现</td>
+</tr>
+<tr>
+<td>S</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="并发控制"><a href="#并发控制" class="headerlink" title="并发控制"></a>并发控制</h2><p><strong>悲观锁</strong>：假定会发生并发冲突，**屏蔽一切可能违反数据完整性的操作。InnoDB 使用的是悲观锁.</p>
+<p><strong>乐观锁</strong>：假设不会发生并发冲突，<strong>只在提交操作时检查是否违反数据完整性</strong>。不是一种真正的锁,冲突了就重试,没有对数据库加锁.<strong>乐观锁因为没有真正加锁,所以不能解决脏读的问题</strong>。它会先尝试对资源进行修改，在写回时判断资源是否进行了改变，如果没有发生改变就会写回，否则就会进行重试，</p>
+<p>乐观锁不会存在死锁的问题，但是由于更新后验证，所以当<strong>冲突频率</strong>和<strong>重试成本</strong>较高时更推荐使用悲观锁，而需要非常高的<strong>响应速度</strong>并且<strong>并发量</strong>非常大的时候使用乐观锁就能较好的解决问题，在这时使用悲观锁就可能出现严重的性能问题；在选择并发控制机制时，需要综合考虑上面的四个方面（冲突频率、重试成本、响应速度和并发量）进行选择。</p>
+<h2 id="锁的分类"><a href="#锁的分类" class="headerlink" title="锁的分类"></a>锁的分类</h2><p><strong>共享锁</strong>代表了读操作、互斥锁代表了写操作，所以我们可以在数据库中<strong>并行读</strong>，但是只能<strong>串行写</strong>，只有这样才能保证不会发生线程竞争，实现线程安全。</p>
+<p>锁的粒度,包括<strong>行锁、表锁</strong>,还引入了<strong>意向锁</strong>,是一种表级锁.</p>
+<p><strong>意向锁</strong>其实不会阻塞全表扫描之外的任何请求，它们的主要目的是为了表示<strong>是否有人请求锁定表中的某一行数据</strong>。</p>
+<p>理解意向锁的目的: 我们在这里可以举一个例子：如果没有意向锁，当已经有人使用行锁对表中的某一行进行修改时，如果另外一个请求要对全表进行修改，那么就需要对所有的行是否被锁定进行扫描，在这种情况下，效率是非常低的；不过，在引入意向锁之后，当有人使用行锁对表中的某一行进行修改之前，会先为表添加意向互斥锁（IX），再为行记录添加互斥锁（X），<strong>在这时如果有人尝试对全表进行修改就不需要判断表中的每一行数据是否被加锁了，只需要通过等待意向互斥锁被释放就可以了。</strong></p>
+<h2 id="锁的算法"><a href="#锁的算法" class="headerlink" title="锁的算法"></a>锁的算法</h2><p><strong>记录锁 record lock</strong> 添加到<strong>索引记录</strong>上的锁.在建表时如果指定了 <code>key</code> 那么,InnoDB 就能通过 B+树找到行记录并添加索引.否则,不知道待修改的记录具体的位置,只能锁定整个表.</p>
+<p><strong>间隙锁 gap lock</strong> 是对索引记录中的一段连续区域的锁；当使用类似 <code>SELECT * FROM users WHERE id BETWEEN 10 AND 20 FOR UPDATE;</code> 的 SQL 语句时，就会阻止其他事务向表中插入 <code>id = 15</code> 的记录，因为<strong>整个范围都被间隙锁锁定</strong>了。</p>
+<blockquote>
+<p><em>间隙锁是存储引擎对于性能和并发做出的权衡，并且只用于某些事务隔离级别。</em></p>
+</blockquote>
+<p>虽然间隙锁中也分为共享锁和互斥锁，不过它们之间并不是互斥的，也就是不同的事务可以同时持有一段相同范围的共享锁和互斥锁，它唯一阻止的就是<strong>其他事务向这个范围中添加新的记录</strong>。</p>
+<p><strong>记录锁和间隙锁的结合:Next-Key Lock</strong> 既然叫 Next-Key 锁，锁定的应该是当前值和后面的范围，但是实际上却不是，Next-Key 锁锁定的是当前值和前面的范围.当我们更新一条记录，比如 <code>SELECT * FROM users WHERE age = 30 FOR UPDATE;</code>，InnoDB 不仅会在范围 <code>(21, 30]</code> 上加 Next-Key 锁，还会在这条记录后面的范围 <code>(30, 40]</code> 加间隙锁，所以插入 <code>(21, 40]</code> 范围内的记录都会被锁定。</p>
+<p>Next-Key 锁的作用其实是为了解决<strong>幻读</strong>的问题.</p>
+<p><strong>不使用索引来更新,会导致表锁的情况.</strong></p>
+<p>参考资料:<a target="_blank" rel="noopener" href="https://draveness.me/mysql-innodb#">『浅入浅出』MySQL 和 InnoDB</a></p>
+<hr><p><span>↶ </span><a href="/">返回首页</a><span></span></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>
