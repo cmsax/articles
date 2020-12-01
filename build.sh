@@ -29,7 +29,7 @@ npm i -g hexo --ignore-scripts
 rm -rf pages
 hexo init pages && cd pages
 npm install --ignore-scripts
-npm i hexo-generator-search hexo-generator-feed hexo-generator-sitemap bulma-stylus hexo-component-inferno hexo-renderer-inferno inferno inferno-create-element --save
+npm i hexo-renderer-pug hexo-generator-search hexo-generator-feed hexo-generator-sitemap bulma-stylus hexo-component-inferno hexo-renderer-inferno inferno inferno-create-element --save
 npm install --save bulma-stylus@0.8.0 hexo@^5.0.2 hexo-log@^2.0.0 hexo-util@^2.2.0 hexo-component-inferno@^0.10.1 --ignore-scripts
 
 git clone $theme_repo themes/$theme_name
